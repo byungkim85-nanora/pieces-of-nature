@@ -80,13 +80,13 @@ nav.top .wrap{display:flex;align-items:center;gap:28px}
 /* hero: the tank photo as a wide print, text on paper beneath it */
 .hero{position:relative;height:clamp(560px,92vh,980px);overflow:hidden;display:grid;align-items:end;margin-top:calc(env(safe-area-inset-top,0px) + 58px)}
 @media (max-width:760px){.hero{margin-top:calc(env(safe-area-inset-top,0px) + 92px)}}
-.hero img,.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%}
+.hero img,.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 55%}
 .hero video{display:none}
 .hero.has-video video{display:block}
 .hero.has-video img{display:none}
 @media (prefers-reduced-motion:no-preference){.hero img,.hero video{animation:drift 28s ease-in-out infinite alternate}@keyframes drift{from{transform:scale(1.02)}to{transform:scale(1.1) translateY(-1.5%)}}}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,var(--bg) 4%,rgba(247,245,239,.8) 26%,rgba(247,245,239,.35) 46%,rgba(247,245,239,0) 62%)}
-@media (max-width:760px){.hero::after{background:linear-gradient(to top,var(--bg) 6%,rgba(247,245,239,.94) 34%,rgba(247,245,239,.72) 56%,rgba(247,245,239,.2) 76%,rgba(247,245,239,0))}.hero .inner .wrap{text-shadow:0 1px 0 rgba(247,245,239,1),0 0 10px rgba(247,245,239,1),0 0 24px rgba(247,245,239,1),0 0 48px rgba(247,245,239,.9)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,var(--bg) 3%,rgba(247,245,239,.68) 20%,rgba(247,245,239,.22) 36%,rgba(247,245,239,0) 50%)}
+@media (max-width:760px){.hero::after{background:linear-gradient(to top,var(--bg) 5%,rgba(247,245,239,.9) 28%,rgba(247,245,239,.55) 46%,rgba(247,245,239,.1) 64%,rgba(247,245,239,0))}.hero .inner .wrap{text-shadow:0 1px 0 rgba(247,245,239,1),0 0 10px rgba(247,245,239,1),0 0 24px rgba(247,245,239,1),0 0 48px rgba(247,245,239,.9)}}
 .hero .inner .wrap{text-shadow:0 1px 0 rgba(247,245,239,.9),0 0 18px rgba(247,245,239,.9),0 0 40px rgba(247,245,239,.7)}
 .hero .inner{position:relative;z-index:2;padding:0 24px clamp(40px,7vh,88px);width:100%}
 .hero .inner .wrap{display:grid;gap:22px}
@@ -196,6 +196,8 @@ nav.top .wrap{display:flex;align-items:center;gap:28px}
 .watch i{width:42px;height:42px;border-radius:50%;border:1px solid var(--ink);display:grid;place-items:center;transition:background .3s,color .3s}
 .watch i svg{width:10px;height:10px;fill:currentColor;margin-left:2px}
 .watch:hover i{background:var(--ink);color:var(--bg)}
+.soon{margin-top:-12px;font-family:var(--f-mono);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:10px}
+.soon span{color:var(--water);border:1px solid var(--water);border-radius:999px;padding:4px 10px;letter-spacing:.16em}
 .side-photo{margin:0;display:grid;gap:10px}
 .side-photo img{width:100%;display:block;aspect-ratio:16/10;object-fit:cover;max-width:100%}
 .cap{font-family:var(--f-mono);font-size:.66rem;letter-spacing:.06em;color:var(--muted)}
@@ -494,7 +496,8 @@ footer{border-top:1px solid var(--line);padding-block:28px 40px;font-size:.8rem;
           <dt>Where</dt><dd>Aquashella Chicago, ADA booth</dd>
           <dt>System</dt><dd>ADA W900</dd>
         </dl>
-        <a class="watch" href="https://www.youtube.com/watch?v=UB6spLrls40&amp;t=348s" target="_blank" rel="noopener"><i><svg viewBox="0 0 10 10"><path d="M2 1l7 4-7 4z"/></svg></i>Watch the master at work</a>
+        <a class="watch" href="https://www.youtube.com/watch?v=UB6spLrls40&amp;t=348s" target="_blank" rel="noopener"><i><svg viewBox="0 0 10 10"><path d="M2 1l7 4-7 4z"/></svg></i>Watch the interview</a>
+        <p class="soon">Making-of film <span>Coming soon</span></p>
       </div>
       <div class="prose read">
         <p>Built live during Homma-san's Aquascaping Masterclass at the ADA booth, using stones he brought from Japan. An Iwagumi is a stone arrangement: a few rocks placed so they read as one mountain range, with water flowing around them. Every stone was chosen and turned until it faced the right way, including the ones you cannot see. He signed the glass when it was finished.</p>
@@ -518,7 +521,7 @@ footer{border-top:1px solid var(--line);padding-block:28px 40px;font-size:.8rem;
           <dt>Where</dt><dd>Aquashella New Jersey</dd>
           <dt>Tank</dt><dd>ADA 90P · W90 × D45 × H45 cm</dd>
         </dl>
-        <a class="watch" href="https://www.youtube.com/watch?v=B5ONU4xJAOg&amp;t=395s" target="_blank" rel="noopener"><i><svg viewBox="0 0 10 10"><path d="M2 1l7 4-7 4z"/></svg></i>Watch it come to life</a>
+        <a class="watch" href="https://youtu.be/6PzVoQINbG0" target="_blank" rel="noopener"><i><svg viewBox="0 0 10 10"><path d="M2 1l7 4-7 4z"/></svg></i>Watch the interview</a>
       </div>
       <div class="prose read">
         <p>Built live during Araki-san's Aquascaping Masterclass at Aquashella New Jersey, two weeks before the Chicago Iwagumi. Araki-san spent four and a half years caring for the largest Nature Aquarium in the world, in Lisbon. For his 2021 Tokyo exhibition piece, he said he wanted visitors to see that the plants themselves are beautiful.</p>
