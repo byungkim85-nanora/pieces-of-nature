@@ -1,0 +1,1087 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Two living aquascapes by Yusuke Homma and Daichi Araki, on a 90-day trial. Take five minutes with nature, then tell us whether they should stay.">
+<meta property="og:title" content="Pieces of Nature on Campus">
+<meta property="og:description" content="Stay a while. Take a quiet moment for yourself.">
+<meta property="og:image" content="photos/hero-poster.jpg">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>Pieces of Nature on Campus</title>
+<style>:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;padding:0}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Shippori+Mincho:wght@400;500&family=Commissioner:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400&display=swap">
+<style>
+/* Layout: a bright gallery in daylight. Warm paper, deep green ink, water blue and leaf green as the two accents. Photographs sit in the page like prints on a wall; type is large and light. Single light look by choice. */
+:root{
+  --bg:#f7f5ef;          /* warm paper */
+  --bg-2:#ffffff;
+  --ink:#172119;         /* deep green-black */
+  --muted:#5f6b63;
+  --line:#dcdcd2;
+  --water:#2a7f94;       /* backlit tank water, deepened for paper */
+  --water-soft:#dceef1;
+  --leaf:#3f7a52;
+  --leaf-deep:#1f4a33;
+  --leaf-soft:#e2eee3;
+  --warn:#b4652a;
+  --f-display:"Cormorant Garamond","Shippori Mincho",Georgia,serif;
+  --f-jp:"Shippori Mincho","Hiragino Mincho ProN",serif;
+  --f-body:"Commissioner",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-weight:300;font-size:16px;line-height:1.7;padding-inline:24px;padding-block:0 0}
+.wrap{max-width:1180px;margin-inline:auto}
+.read{max-width:62ch}
+a{color:var(--water);text-underline-offset:4px;text-decoration-thickness:1px}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--water);outline-offset:3px}
+h1,h2,h3{font-family:var(--f-display);font-weight:300;text-wrap:balance;margin:0;line-height:1.02}
+body{font-feature-settings:"lnum" 1}
+.finding .num,.pilot .d-num,.tally .n,.fact b,.step .t,.session .done h3{font-feature-settings:"lnum" 1,"tnum" 1}
+p{margin:0}
+.label{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+.jp{font-family:var(--f-jp);font-weight:400;letter-spacing:.1em}
+.bleed{margin-inline:calc(50% - 50vw);width:100vw;max-width:100vw}
+
+/* nav */
+nav.top{position:fixed;top:0;left:0;right:0;z-index:20;padding:calc(env(safe-area-inset-top,0px) + 12px) 24px 12px;background:rgba(247,245,239,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav.top.solid{box-shadow:0 8px 30px -22px rgba(23,33,25,.5)}
+nav.top .wrap{display:flex;align-items:center;gap:28px}
+.brand{color:var(--ink);text-decoration:none;white-space:nowrap}
+.links-nav{display:flex;gap:26px;overflow-x:auto;scrollbar-width:none;min-width:0;flex:1;justify-content:center}
+.links-nav::-webkit-scrollbar{display:none}
+.links-nav a{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);text-decoration:none;white-space:nowrap;padding-block:4px;border-bottom:1px solid transparent}
+.links-nav a:hover{color:var(--ink)}
+.links-nav a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--leaf)}
+.cta{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);text-decoration:none;border:1px solid var(--ink);padding:9px 16px;white-space:nowrap;transition:background .3s,color .3s;background:none;cursor:pointer}
+.cta:hover{background:var(--ink);color:var(--bg)}
+@media (max-width:760px){nav.top .wrap{flex-wrap:wrap;gap:10px 16px}.links-nav{order:3;flex-basis:100%;justify-content:flex-start;gap:20px}}
+
+/* logo lockup */
+.lockup{display:inline-grid;justify-items:stretch;gap:3px;line-height:1;font-style:normal}
+.lockup .lk-name{font-family:var(--f-display);font-size:1.3rem;font-weight:400;letter-spacing:-.005em}
+.lockup .lk-name em{font-style:italic;color:var(--water)}
+.lk-sub{display:flex;align-items:center;gap:8px;font-family:var(--f-mono);font-size:.5rem;letter-spacing:.42em;text-transform:uppercase;color:var(--water);font-style:normal;font-weight:400}
+.lk-sub::before,.lk-sub::after{content:"";flex:1;height:1px;background:color-mix(in srgb,var(--water) 45%,transparent)}
+.hero-lockup{display:inline-grid;gap:clamp(14px,2vw,24px);justify-items:stretch}
+.hero-lockup .lk-name{display:block}
+.hero-lockup .lk-sub{font-size:clamp(.66rem,1vw,.8rem);letter-spacing:.6em;line-height:1;gap:clamp(12px,2vw,22px)}
+
+/* pages */
+.page{display:grid;gap:120px;padding-bottom:40px}
+.page[hidden]{display:none!important}
+@media (prefers-reduced-motion:no-preference){.page:not([hidden]){animation:fade .9s ease both}@keyframes fade{from{opacity:.25}to{opacity:1}}}
+
+/* hero: the tank photo as a wide print, text on paper beneath it */
+.hero{position:relative;height:clamp(560px,92vh,980px);overflow:hidden;display:grid;align-items:end;margin-top:calc(env(safe-area-inset-top,0px) + 58px)}
+@media (max-width:760px){.hero{margin-top:calc(env(safe-area-inset-top,0px) + 92px)}}
+.hero img,.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%}
+.hero video{display:none}
+.hero.has-video video{display:block}
+.hero.has-video img{display:none}
+@media (prefers-reduced-motion:no-preference){.hero img,.hero video{animation:drift 28s ease-in-out infinite alternate}@keyframes drift{from{transform:scale(1.02)}to{transform:scale(1.1) translateY(-1.5%)}}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,var(--bg) 3%,rgba(247,245,239,.72) 22%,rgba(247,245,239,.28) 42%,rgba(247,245,239,0) 58%)}
+.hero .inner .wrap{text-shadow:0 1px 0 rgba(247,245,239,.9),0 0 18px rgba(247,245,239,.9),0 0 40px rgba(247,245,239,.7)}
+.hero .inner{position:relative;z-index:2;padding:0 24px clamp(40px,7vh,88px);width:100%}
+.hero .inner .wrap{display:grid;gap:22px}
+.hero h1{font-size:clamp(3.2rem,9vw,7.2rem);letter-spacing:-.03em;line-height:.9;color:var(--ink)}
+.hero h1 em{font-style:italic;font-weight:300;color:var(--water)}
+.hero .welcome{font-family:var(--f-display);font-size:clamp(1.5rem,3.2vw,2.3rem);font-style:italic;line-height:1.25;max-width:28ch;color:var(--leaf-deep)}
+.hero .row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px 64px;align-items:end}
+.hero .lede{max-width:46ch;color:var(--muted)}
+.hero-act{display:grid;gap:22px;justify-items:end;text-align:right;max-width:430px}
+@media (max-width:760px){.hero .row{grid-template-columns:1fr}.hero-act{justify-items:start;text-align:left}}
+.bubbles{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
+
+/* begin button */
+.begin{display:inline-flex;align-items:center;gap:14px;font-family:var(--f-mono);font-size:.82rem;letter-spacing:.22em;text-transform:uppercase;background:var(--water);color:#fff;border:0;padding:20px 34px;cursor:pointer;transition:background .3s;box-shadow:0 12px 30px -12px rgba(42,127,148,.7);text-decoration:none}
+.begin:hover{background:#1d5f70}
+.begin i{width:8px;height:8px;border-radius:50%;background:#fff;position:relative}
+@media (prefers-reduced-motion:no-preference){.begin i::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:1px solid #fff;animation:ping 2.4s ease-out infinite}@keyframes ping{from{transform:scale(.4);opacity:1}to{transform:scale(1.8);opacity:0}}}
+
+/* breathe: a full-width nature photograph with the breathing circle over it */
+.breathe{position:relative;overflow:hidden;min-height:clamp(520px,78vh,820px);display:grid;align-items:center;justify-items:center;text-align:center;color:#fff}
+.breathe .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 60%}
+@media (prefers-reduced-motion:no-preference){.breathe .bg{animation:drift 36s ease-in-out infinite alternate}}
+.breathe::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(23,33,25,.35),rgba(23,33,25,.55) 55%,rgba(23,33,25,.7))}
+.breathe .inner{position:relative;z-index:1;display:grid;justify-items:center;gap:30px;padding:72px 24px;max-width:760px}
+.breathe .label{color:rgba(255,255,255,.75)}
+.orb{width:clamp(150px,22vw,220px);aspect-ratio:1;max-width:100%;border-radius:50%;position:relative;display:grid;place-items:center}
+.orb::before{content:"";position:absolute;inset:0;border-radius:50%;border:1px solid rgba(255,255,255,.7);background:radial-gradient(circle,rgba(255,255,255,.22),transparent 70%)}
+.orb span{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:#fff;position:relative}
+@media (prefers-reduced-motion:no-preference){.orb::before{animation:breath 10s ease-in-out infinite}@keyframes breath{0%,100%{transform:scale(.62);opacity:.55}50%{transform:scale(1);opacity:1}}}
+.breathe .big{font-family:var(--f-display);font-size:clamp(2.4rem,6vw,4.8rem);line-height:1.05;max-width:18ch;font-style:italic;text-shadow:0 2px 30px rgba(0,0,0,.25)}
+.breathe .small{color:rgba(255,255,255,.85);max-width:48ch;font-size:1.05rem}
+/* the session screen keeps its own orb colours */
+.session .orb::before{border-color:color-mix(in srgb,var(--water) 55%,transparent);background:radial-gradient(circle,color-mix(in srgb,var(--water) 22%,transparent),transparent 70%)}
+.session .orb span{color:var(--water)}
+
+/* works on home */
+.pieces{display:grid;gap:140px}
+.piece{display:grid;gap:34px;text-decoration:none;color:inherit}
+.piece .frame{overflow:hidden;aspect-ratio:2/1;max-width:100%;background:var(--bg-2)}
+.piece .frame img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.6s cubic-bezier(.2,.6,.2,1)}
+.piece:hover .frame img{transform:scale(1.03)}
+.piece .meta{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:32px;align-items:end}
+.numeral{width:48px;height:1px;background:var(--water);margin-bottom:18px;align-self:end}
+.piece h2{font-size:clamp(2.4rem,5.4vw,4.4rem)}
+.piece .by{color:var(--muted);margin-top:8px}
+.def{color:var(--muted);font-size:.98rem;max-width:58ch;margin-top:14px;line-height:1.65}
+.work .def{margin-top:0}
+.go{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink);border-bottom:1px solid var(--ink);padding-bottom:4px;white-space:nowrap}
+.piece:hover .go{border-color:var(--water);color:var(--water)}
+@media (max-width:700px){.piece .meta{grid-template-columns:auto minmax(0,1fr);gap:18px}.piece .go{grid-column:1/-1;justify-self:start}}
+
+/* statement + pilot */
+.statement{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:48px;border-top:1px solid var(--line);padding-top:40px}
+.statement p.lead{font-family:var(--f-display);font-size:clamp(1.6rem,3.2vw,2.4rem);line-height:1.3}
+.statement .body{display:grid;gap:16px;color:var(--muted);align-content:start}
+@media (max-width:820px){.statement{grid-template-columns:1fr;gap:20px}}
+.st-side{display:grid;gap:22px;align-content:start}
+.st-photo{margin:0;display:grid;gap:10px}
+.st-photo img{width:100%;max-width:100%;aspect-ratio:16/10;object-fit:cover;display:block}
+.pilot{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:clamp(24px,4vw,48px);align-items:center;padding:clamp(28px,4vw,48px);background:linear-gradient(120deg,#1d5f70,var(--water) 70%,#3a93a8);border-radius:2px}
+.pilot .days{display:grid;justify-items:center;gap:12px;padding-inline:8px;line-height:1}
+.pilot .d-num{font-family:var(--f-display);font-size:clamp(4.4rem,9vw,7rem);line-height:.85;color:#fff;font-weight:300}
+.pilot .d-lab{font-family:var(--f-mono);font-size:.64rem;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.8);white-space:nowrap;padding-left:.32em}
+.pilot strong{display:block;font-family:var(--f-display);font-weight:400;font-size:clamp(1.6rem,3vw,2.2rem);line-height:1.15;margin-bottom:10px;color:#fff}
+.pilot p{color:rgba(255,255,255,.78);max-width:52ch}
+.pilot .cta{border-color:rgba(255,255,255,.65);color:#fff;font-size:.8rem;padding:14px 24px}
+.pilot .cta:hover{background:#fff;color:#1d5f70}
+@media (max-width:760px){.pilot{grid-template-columns:1fr;gap:22px}.pilot .cta{justify-self:start}}
+.rooms{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 32px}
+@media (max-width:860px){.rooms{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.rooms{grid-template-columns:1fr}}
+.room{display:grid;gap:10px;padding:28px 0 34px;border-top:1px solid var(--line);text-decoration:none;color:inherit;min-width:0;transition:border-color .3s;align-content:start}
+.room .go{margin-top:8px;justify-self:start}
+.review-room{border-top:2px solid var(--water)}
+.review-room .t{color:var(--water)}
+.review-room .label{color:var(--water)}
+.room:hover{border-top-color:var(--water)}
+.room .t{font-family:var(--f-display);font-size:clamp(1.8rem,2.6vw,2.3rem);line-height:1.05;text-wrap:balance}
+.room p{font-size:.92rem;color:var(--muted)}
+
+/* page headers (inner pages) */
+.page-head{padding-top:clamp(140px,20vh,200px);display:grid;gap:24px;max-width:960px}
+.page-head h2{font-size:clamp(3rem,8vw,6.5rem);letter-spacing:-.02em}
+.page-head h2 em{font-style:italic;color:var(--water)}
+.page-head .lede{font-family:var(--f-display);font-size:clamp(1.3rem,2.4vw,1.7rem);line-height:1.4;color:var(--muted);max-width:44ch}
+
+/* works page */
+.work{display:grid;gap:44px}
+.work .frame{overflow:hidden;aspect-ratio:2/1;max-width:100%}
+.work .frame img{width:100%;height:100%;object-fit:cover;display:block}
+.work-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:56px}
+@media (max-width:860px){.work-grid{grid-template-columns:1fr;gap:32px}}
+.work h3{font-size:clamp(2.6rem,5.6vw,4.6rem)}
+.spec{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px 22px;font-size:.9rem;margin:0;border-top:1px solid var(--line);padding-top:18px}
+.spec dt{font-family:var(--f-mono);font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);padding-top:4px}
+.spec dd{margin:0}
+.prose{display:grid;gap:22px;align-content:start}
+.prose p{font-size:1.04rem}
+.look{border-left:2px solid var(--water);padding:4px 0 4px 22px;display:grid;gap:8px;background:linear-gradient(to right,var(--water-soft),transparent 70%);padding-block:14px}
+.look p:last-child{font-family:var(--f-display);font-size:1.4rem;line-height:1.35;font-style:italic}
+.watch{display:inline-flex;align-items:center;gap:12px;color:var(--ink);text-decoration:none;font-family:var(--f-mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;justify-self:start}
+.watch i{width:42px;height:42px;border-radius:50%;border:1px solid var(--ink);display:grid;place-items:center;transition:background .3s,color .3s}
+.watch i svg{width:10px;height:10px;fill:currentColor;margin-left:2px}
+.watch:hover i{background:var(--ink);color:var(--bg)}
+.side-photo{margin:0;display:grid;gap:10px}
+.side-photo img{width:100%;display:block;aspect-ratio:16/10;object-fit:cover;max-width:100%}
+.cap{font-family:var(--f-mono);font-size:.66rem;letter-spacing:.06em;color:var(--muted)}
+
+/* creators */
+.founder{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:48px;border-top:1px solid var(--line);padding-top:40px}
+.founder h3{font-size:clamp(2.4rem,5vw,3.8rem)}
+@media (max-width:820px){.founder{grid-template-columns:1fr;gap:18px}}
+.creators{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:72px}
+.creator{display:grid;gap:22px;align-content:start;min-width:0;border-top:1px solid var(--line);padding-top:32px}
+.creator h3{font-size:clamp(2.4rem,4.6vw,3.6rem)}
+.creator h3 .jp{display:block;font-size:.4em;color:var(--muted);margin-top:10px}
+.creator ul{margin:0;padding:0;list-style:none;display:grid;gap:12px;color:var(--ink)}
+.creator li{padding-left:22px;position:relative}
+.creator li::before{content:"";position:absolute;left:0;top:.8em;width:10px;height:1px;background:var(--leaf)}
+blockquote{margin:0;font-family:var(--f-display);font-size:clamp(1.6rem,2.8vw,2.2rem);line-height:1.25;font-style:italic;color:var(--leaf-deep)}
+blockquote cite{display:block;font-family:var(--f-mono);font-style:normal;font-size:.66rem;letter-spacing:.08em;color:var(--muted);margin-top:14px}
+.more{font-size:.9rem;color:var(--muted)}
+
+/* research */
+.findings{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:0 56px}
+.finding{display:grid;gap:12px;padding-block:32px;border-top:1px solid var(--line);min-width:0}
+.finding .num{font-family:var(--f-display);font-size:clamp(2.8rem,5vw,3.8rem);line-height:.95;color:var(--water);font-variant-numeric:tabular-nums}
+.finding p{color:var(--ink)}
+.finding small{font-family:var(--f-mono);font-size:.66rem;letter-spacing:.04em;color:var(--muted)}
+.counter{border-left:2px solid var(--warn);padding:14px 0 14px 24px;display:grid;gap:10px;max-width:760px;background:linear-gradient(to right,#f6ebdf,transparent 80%)}
+.counter .label{color:var(--warn)}
+.lib{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:40px 48px}
+.lib div{min-width:0;display:grid;gap:14px;align-content:start}
+.lib ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:.92rem}
+.lib a{color:var(--ink);text-decoration-color:var(--line)}
+.lib a:hover{color:var(--water)}
+
+/* visit */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:0}
+.step{display:grid;gap:14px;padding:34px 28px 36px 0;border-top:1px solid var(--line);align-content:start;min-width:0}
+.step .n{font-family:var(--f-mono);font-size:.9rem;color:var(--water);letter-spacing:.1em}
+.step .t{font-family:var(--f-display);font-size:clamp(2.6rem,4.4vw,3.4rem);line-height:.95}
+.step .t::after{content:"";display:block;width:24px;height:1px;background:var(--water);margin-top:12px}
+.step p{color:var(--muted)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.fact{background:var(--bg-2);padding:26px 24px;display:grid;gap:8px}
+.fact b{font-family:var(--f-display);font-size:1.6rem;font-weight:400}
+.fact span{font-size:.92rem;color:var(--muted)}
+
+/* review desk */
+.desk-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:64px;align-items:start}
+@media (max-width:900px){.desk-grid{grid-template-columns:1fr}}
+form.desk{display:grid;gap:32px;background:var(--bg-2);border:1px solid var(--line);padding:clamp(22px,3vw,36px)}
+fieldset{border:0;margin:0;padding:0;display:grid;gap:12px;min-width:0}
+legend{font-family:var(--f-display);font-size:1.5rem;font-weight:400;margin-bottom:8px;padding:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{position:relative}
+.chips input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.chips span{display:inline-block;border:1px solid var(--line);padding:10px 16px;font-size:.92rem;cursor:pointer;transition:border-color .2s;background:var(--bg)}
+.chips span:hover{border-color:var(--muted)}
+.chips input:checked+span{background:var(--leaf);border-color:var(--leaf);color:#fff}
+.chips input:focus-visible+span{outline:2px solid var(--water);outline-offset:3px}
+input[type=text],textarea{width:100%;font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);padding:12px 14px}
+textarea{min-height:120px;resize:vertical}
+button.submit{font-family:var(--f-mono);font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;background:var(--leaf);color:#fff;border:0;padding:16px 30px;cursor:pointer;justify-self:start}
+button.submit:hover{background:var(--leaf-deep)}
+button.submit:disabled{opacity:.5;cursor:not-allowed}
+.status{font-size:.9rem;color:var(--muted)}
+.status.err{color:var(--warn)}
+.thanks{border:1px solid var(--leaf);background:var(--leaf-soft);padding:36px;text-align:center;display:grid;gap:10px}
+.thanks h3{font-size:2.4rem;font-style:italic}
+.readonly{border:1px dashed var(--line);padding:24px;display:grid;gap:8px;background:var(--bg-2)}
+.gform{border:1px solid var(--line);padding:clamp(24px,4vw,40px);gap:14px;justify-items:start}
+.gform h3{font-size:clamp(2rem,4vw,3rem)}
+.gform p{max-width:48ch}
+.gform .begin{margin-top:6px}
+.side{display:grid;gap:20px;align-content:start;min-width:0;position:sticky;top:110px}
+@media (max-width:900px){.side{position:static}}
+.tally{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.tally div{background:var(--bg-2);padding:18px 12px;text-align:center}
+.tally .n{font-family:var(--f-display);font-size:2.8rem;line-height:1;font-variant-numeric:tabular-nums}
+.tally .k{font-family:var(--f-mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+.tally .yes .n{color:var(--leaf)}
+.stats{margin-top:6px}
+.stats .n{font-size:2.1rem}
+.bar{height:3px;background:var(--line);overflow:hidden;display:flex}
+.bar span{display:block;height:100%}
+.bar .y{background:var(--leaf)}.bar .u{background:var(--muted)}.bar .no{background:var(--warn)}
+.reviews{display:grid;gap:0}
+.rv{border-top:1px solid var(--line);padding-block:16px;display:grid;gap:8px}
+.rv .meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:.8rem;color:var(--muted)}
+.pill{font-family:var(--f-mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;padding:2px 8px;border:1px solid currentColor}
+.pill.yes{color:var(--leaf)}.pill.unsure{color:var(--muted)}.pill.no{color:var(--warn)}
+.rv p{white-space:pre-wrap;overflow-wrap:anywhere}
+.empty{color:var(--muted);font-family:var(--f-display);font-style:italic;font-size:1.2rem}
+
+/* closing */
+.closing{text-align:center;display:grid;gap:22px;justify-items:center;padding-block:140px 80px;border-top:1px solid var(--line);margin-top:120px}
+.sig{font-family:var(--f-display);font-size:clamp(3rem,10vw,8rem);line-height:.9;letter-spacing:-.02em;font-weight:300}
+.sig em{color:var(--water)}
+footer{border-top:1px solid var(--line);padding-block:28px 40px;font-size:.8rem;color:var(--muted);display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 24px;align-items:center}
+.visits{display:flex;flex-wrap:wrap;gap:6px 18px;font-family:var(--f-mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
+.visits b{font-weight:400;color:var(--water);font-variant-numeric:tabular-nums;font-size:.8rem}
+
+/* sound menu */
+.snd-wrap{position:relative}
+.snd{display:inline-flex;align-items:center;gap:8px;background:none;border:0;color:var(--muted);cursor:pointer;font-family:var(--f-mono);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;padding:6px}
+.snd svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.4}
+.snd svg path:first-child{fill:currentColor;stroke:none}
+.snd .w{opacity:.25}
+.snd[aria-expanded="true"]{color:var(--water)}
+@media (max-width:760px){.snd span{display:none}.snd-menu{position:fixed;left:16px;right:16px;top:calc(env(safe-area-inset-top,0px) + 100px);width:auto}}
+.snd-menu{position:absolute;right:0;top:calc(100% + 10px);width:290px;background:var(--bg-2);border:1px solid var(--line);box-shadow:0 20px 50px -20px rgba(23,33,25,.35);padding:14px;display:grid;gap:4px;z-index:30}
+.snd-menu[hidden]{display:none!important}
+.snd-menu .label{padding:4px 8px 8px}
+.snd-opt{display:grid;grid-template-columns:18px 1fr;gap:10px;align-items:center;padding:9px 8px;cursor:pointer;border-radius:2px;text-align:left;background:none;border:0;font:inherit;color:var(--ink);width:100%;text-decoration:none}
+.snd-opt:hover{background:var(--leaf-soft)}
+.snd-opt i{width:0;height:0;border-left:9px solid var(--water);border-top:5px solid transparent;border-bottom:5px solid transparent;justify-self:center}
+.snd-opt[aria-checked="true"] i{background:var(--leaf);border-color:var(--leaf)}
+.snd-opt b{font-weight:500;font-size:.92rem;display:block}
+.snd-opt small{color:var(--muted);font-size:.78rem;display:block;line-height:1.35}
+.snd-menu .yt{border-top:1px solid var(--line);margin-top:8px;padding:10px 8px 2px;margin-bottom:0}
+.snd-menu .yt a{display:block}
+.snd-menu .yt small{color:var(--muted);font-size:.74rem;line-height:1.4}
+
+.s-music{display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:center;align-items:center;font-size:.9rem}
+.s-music a{color:var(--ink);text-decoration-color:var(--line)}
+.s-music a:hover{color:var(--water)}
+.tracks{display:grid;gap:2px}
+.snd-opt[aria-checked="true"] i{border-left-color:var(--water);transform:scale(1.15)}
+.snd-opt[aria-checked="true"] b{color:var(--water)}
+.now{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:center;border-top:1px solid var(--line);margin-top:8px;padding:12px 8px 4px}
+.now[hidden]{display:none!important}
+.pp{width:36px;height:36px;border-radius:50%;border:1px solid var(--ink);background:var(--ink);cursor:pointer;position:relative}
+.pp::before,.pp::after{content:"";position:absolute;top:11px;width:3px;height:14px;background:var(--bg)}
+.pp::before{left:13px}.pp::after{left:20px}
+.pp.paused::before{left:14px;top:10px;width:0;height:0;background:none;border-left:12px solid var(--bg);border-top:8px solid transparent;border-bottom:8px solid transparent}
+.pp.paused::after{display:none}
+.nt{display:grid;gap:2px;min-width:0}.nt b{font-weight:500;font-size:.9rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.nt span{font-family:var(--f-mono);font-size:.66rem;color:var(--muted)}
+.s-link{background:none;border:0;font:inherit;color:var(--ink);cursor:pointer;padding:4px 2px;border-bottom:1px solid var(--line)}
+.s-link:hover,.s-link[aria-pressed="true"]{color:var(--water);border-bottom-color:var(--water)}
+/* five-minute session */
+.session{position:fixed;inset:0;z-index:50;display:grid;place-items:center;padding:calc(env(safe-area-inset-top,0px) + 24px) 24px calc(env(safe-area-inset-bottom,0px) + 24px);background:var(--bg);overflow:hidden}
+.session[hidden]{display:none!important}
+.session .bgimg{position:absolute;inset:-4%;width:108%;height:108%;object-fit:cover;filter:blur(22px) saturate(1.05);opacity:.5}
+.session::before{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(247,245,239,.55),rgba(247,245,239,.85))}
+@media (prefers-reduced-motion:no-preference){.session .bgimg{animation:drift 40s ease-in-out infinite alternate}}
+.session .stage{position:relative;display:grid;justify-items:center;text-align:center;gap:clamp(24px,5vh,44px);width:100%;max-width:720px}
+.session .orb{width:clamp(200px,38vmin,340px)}
+.session .orb span{font-size:.74rem}
+.session .prompt{font-family:var(--f-display);font-style:italic;font-size:clamp(1.8rem,4.6vw,3rem);line-height:1.2;min-height:2.6em;transition:opacity 1.2s;color:var(--leaf-deep)}
+.session .prompt.fade{opacity:0}
+.session .clock{font-family:var(--f-mono);font-size:.9rem;letter-spacing:.3em;color:var(--muted);font-variant-numeric:tabular-nums}
+.session .track{width:min(320px,70vw);height:2px;background:var(--line);position:relative}
+.session .track b{position:absolute;left:0;top:0;bottom:0;background:var(--water);width:0;transition:width 1s linear}
+.session .end{font-family:var(--f-mono);font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);background:none;border:0;cursor:pointer;padding:8px}
+.session .end:hover{color:var(--ink)}
+.session .done{display:grid;gap:22px;justify-items:center}
+.session .done h3{font-size:clamp(3rem,9vw,6rem);font-style:italic}
+.session .done .row{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+
+.cr-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:28px;align-items:end}
+.portrait{margin:0;display:grid;gap:8px}
+.portrait img{width:100%;display:block;aspect-ratio:3/4;object-fit:cover;max-width:100%;filter:grayscale(1)}
+.cr-name{display:grid;gap:10px;align-content:end;padding-bottom:28px}
+.cr-name h3{font-size:clamp(3rem,6vw,4.8rem);line-height:.92;letter-spacing:-.02em}
+.cr-name .jp{font-size:1.05rem;color:var(--muted)}
+.cr-name .role{font-size:.9rem;color:var(--muted);margin-top:6px}
+@media (max-width:560px){.cr-head{grid-template-columns:1fr}.cr-name{padding-bottom:0}}
+.feat-cap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.feat-cap b{font-weight:500;color:var(--ink)}
+</style>
+</head>
+<body>
+
+
+<nav class="top" id="topnav"><div class="wrap">
+  <a class="brand lockup" href="#home"><span class="lk-name">Pieces of <em>Nature</em></span><span class="lk-sub">on Campus</span></a>
+  <div class="links-nav" id="nav">
+    <a href="#works">Works</a>
+    <a href="#creators">Creators</a>
+    <a href="#research">Research</a>
+    <a href="#visit">Visit</a>
+  </div>
+  <div class="snd-wrap"><button class="snd" type="button" id="snd" aria-pressed="false" aria-expanded="false" aria-label="Sound"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z"/><path class="w" d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/></svg><span id="snd-label">Music</span></button>
+  <div class="snd-menu" id="snd-menu" hidden role="menu">
+    <p class="label">Music for your five minutes</p>
+    <div id="track-list" class="tracks"></div>
+    <div class="now" id="now" hidden><button class="pp" type="button" id="pp" aria-label="Pause"></button><div class="nt"><b id="now-title"></b><span id="now-time">0:00</span></div></div>
+    <p class="yt"><small>Plays here in the page and keeps going while you move around. Music by AvelineMusic via Pixabay, free to use.</small></p>
+  </div></div>
+  <a class="cta" href="#review">Leave a review</a>
+</div></nav>
+
+<div class="wrap">
+
+<!-- HOME -->
+<main class="page" id="p-home" data-page="home">
+  <header class="hero bleed has-video">
+    <video id="hero-video" muted loop playsinline autoplay preload="auto" poster="photos/hero-poster.jpg" aria-hidden="true"></video>
+    <img src="photos/homma-wide.jpg" id="hero-img" alt="An Iwagumi aquascape glowing in a dark room: one large tilted stone over a green carpet of plants">
+    <canvas class="bubbles" id="bubbles" aria-hidden="true"></canvas>
+    <div class="inner"><div class="wrap">
+      <p class="label">A place to pause</p>
+      <h1 class="hero-lockup"><span class="lk-name">Pieces<br>of <em>Nature</em></span><span class="lk-sub">on Campus</span></h1>
+      <div class="row">
+        <p class="welcome">Stay a while.<br>Take a quiet moment for yourself.</p>
+        <div class="hero-act"><p class="lede">Step away from the day for five minutes. Sit with stone, water and living plants, and let them slow you down.</p><button class="begin" type="button" data-begin><i></i>Begin five minutes</button></div>
+      </div>
+    </div></div>
+  </header>
+
+  <section class="breathe bleed" aria-label="A moment with nature">
+    <img class="bg" src="photos/ada-wide.jpg" alt="">
+    <div class="inner">
+      <p class="label">A moment with nature</p>
+      <div class="orb" aria-hidden="true"><span id="breath-word">Breathe in</span></div>
+      <p class="big">Let the water<br>slow you down.</p>
+      <p class="small">Follow one fish. Watch the light on the leaves. Even a few quiet minutes with living nature can soften the day. Stay as long as you like.</p>
+    </div>
+  </section>
+
+  <section class="pieces" aria-label="The two works">
+    <a class="piece" href="#works-homma">
+      <div class="frame bleed"><img src="photos/homma-tight.jpg" alt="Iwagumi by Yusuke Homma"></div>
+      <div class="meta">
+        <span class="numeral" aria-hidden="true"></span>
+        <div><h2>Iwagumi <span class="jp" style="font-size:.45em;color:var(--muted)">石組</span></h2><p class="by">Yusuke Homma · Aquashella Chicago, 2026</p><p class="def">An Iwagumi (石組, “stone arrangement”) is an aquascape built mainly from stone. One main stone and a few supporting stones are placed so they read as a single mountain landscape, with low plants and open water around them. Simplicity and empty space are the point.</p></div>
+        <span class="go">Enter the work</span>
+      </div>
+    </a>
+    <a class="piece" href="#works-araki">
+      <div class="frame bleed"><img src="photos/araki-tight.jpg" alt="Nature Aquarium by Daichi Araki"></div>
+      <div class="meta">
+        <span class="numeral" aria-hidden="true"></span>
+        <div><h2>Nature Aquarium</h2><p class="by">Daichi Araki · Aquashella New Jersey, 2026</p><p class="def">Nature Aquarium is the style Takashi Amano created. Wood, stone and many kinds of plants are arranged to recreate a scene from nature, such as a forest or a riverbank, as a living ecosystem that keeps growing and changing.</p></div>
+        <span class="go">Enter the work</span>
+      </div>
+    </a>
+  </section>
+
+  <section class="statement">
+    <div class="st-side">
+      <p class="label">About these works</p>
+      <figure class="st-photo"><img src="photos/ada-wide.jpg" id="ada-feature" alt="Breezy Stonescape by Yusuke Homma: grasses, dark stones and a shoal of small fish in a very wide tank"><figcaption class="cap feat-cap" id="ada-feature-cap"><span><b>Breezy Stonescape</b> · Yusuke Homma · AOAO SAPPORO</span><span>© Aqua Design Amano</span></figcaption></figure>
+    </div>
+    <div style="display:grid;gap:22px">
+      <p class="lead">These are more than aquariums. They are living works of art, landscapes shaped by stone, water, plants, light, and time.</p>
+      <div class="body">
+        <p>Their presence reflects a simple principle of biophilic design: bringing meaningful experiences of nature into the spaces where we learn, work, receive care, and connect.</p>
+        <p>Created in the tradition of Nature Aquarium, these works are never finished. Plants grow, water moves, and the landscape keeps changing with time.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="pilot">
+    <div class="days"><span class="d-num">90</span><span class="d-lab">Day trial</span></div>
+    <div><strong>Should these stay on campus?</strong><p>These works are here on a 90-day trial. At the end, we will read every review and decide together whether they remain in this space. Your review takes about a minute, and everything else lives here too: the stories, the videos, the research.</p></div>
+    <a class="cta" href="#review">Leave a review</a>
+  </section>
+
+  <nav class="rooms" aria-label="Explore">
+    <a class="room" href="#works"><span class="label">The Works</span><span class="t">Two living landscapes</span><p>Built live in front of an audience, now growing here.</p></a>
+    <a class="room" href="#creators"><span class="label">The Creators</span><span class="t">Who made these</span><p>Two direct disciples of Takashi Amano.</p></a>
+    <a class="room" href="#research"><span class="label">Research</span><span class="t">Why nature heals</span><p>What the studies show, and where they disagree.</p></a>
+    <a class="room" href="#visit"><span class="label">Visit</span><span class="t">Five minutes</span><p>A short, guided pause with the tanks.</p></a>
+    <a class="room review-room" href="#review"><span class="label">Your turn</span><span class="t">Tell us your thoughts</span><p>One minute. Your review decides whether these works stay.</p><span class="go">Leave a review</span></a>
+    <a class="room" href="#review"><span class="label">So far</span><span class="t"><span id="home-count">0</span> reviews</span><p id="home-meta">Join the people who have already sat with the tanks.</p></a>
+  </nav>
+</main>
+
+<!-- WORKS -->
+<main class="page" id="p-works" data-page="works" hidden>
+  <header class="page-head">
+    <p class="label">The Works</p>
+    <h2>Two living <em>landscapes</em></h2>
+    <p class="lede">One is a single mountain of stone. The other is a forest of wood and leaves. Both were built live in front of an audience, and both have kept growing since.</p>
+  </header>
+
+  <article class="work" id="works-homma">
+    <div class="frame bleed"><img src="photos/homma-tight.jpg" alt="Iwagumi by Yusuke Homma, front view"></div>
+    <div class="work-grid">
+      <div style="display:grid;gap:26px;align-content:start">
+        <p class="label">The work</p>
+        <h3>Iwagumi<br><span class="jp" style="font-size:.5em;color:var(--muted)">石組</span></h3>
+        <p class="def">An Iwagumi (石組, “stone arrangement”) is an aquascape built mainly from stone. One main stone and a few supporting stones are placed so they read as a single mountain landscape, with low plants and open water around them. Simplicity and empty space are the point.</p>
+        <dl class="spec">
+          <dt>Creator</dt><dd>Yusuke Homma</dd>
+          <dt>Style</dt><dd>Iwagumi, stone arrangement</dd>
+          <dt>Built</dt><dd>Sept 26, 2026</dd>
+          <dt>Where</dt><dd>Aquashella Chicago, ADA booth</dd>
+          <dt>System</dt><dd>ADA W900</dd>
+        </dl>
+        <a class="watch" href="https://www.youtube.com/watch?v=UB6spLrls40&amp;t=348s" target="_blank" rel="noopener"><i><svg viewBox="0 0 10 10"><path d="M2 1l7 4-7 4z"/></svg></i>Watch the master at work</a>
+      </div>
+      <div class="prose read">
+        <p>Built live during Homma-san's Aquascaping Masterclass at the ADA booth, using stones he brought from Japan. An Iwagumi is a stone arrangement: a few rocks placed so they read as one mountain range, with water flowing around them. Every stone was chosen and turned until it faced the right way, including the ones you cannot see. He signed the glass when it was finished.</p>
+        <div class="look"><p class="label">What to look for</p><p>Find the main stone, the one the others lean toward. It sets the direction of the whole landscape.</p></div>
+        <figure class="side-photo"><img src="photos/homma-talk.jpg" alt="Yusuke Homma explaining his Iwagumi at Aquashella Chicago" style="object-position:60% 40%"><figcaption class="cap">Yusuke Homma explaining this Iwagumi at Aquashella Chicago 2026</figcaption></figure>
+      </div>
+    </div>
+  </article>
+
+  <article class="work" id="works-araki">
+    <div class="frame bleed"><img src="photos/araki-tight.jpg" alt="Nature Aquarium by Daichi Araki, front view"></div>
+    <div class="work-grid">
+      <div style="display:grid;gap:26px;align-content:start">
+        <p class="label">The work</p>
+        <h3>Nature<br>Aquarium</h3>
+        <p class="def">Nature Aquarium is the style Takashi Amano created. Wood, stone and many kinds of plants are arranged to recreate a scene from nature, such as a forest or a riverbank, as a living ecosystem that keeps growing and changing.</p>
+        <dl class="spec">
+          <dt>Creator</dt><dd>Daichi Araki</dd>
+          <dt>Style</dt><dd>Nature Aquarium, wood and stone</dd>
+          <dt>Built</dt><dd>Sept 12, 2026</dd>
+          <dt>Where</dt><dd>Aquashella New Jersey</dd>
+          <dt>Tank</dt><dd>ADA 90P · W90 × D45 × H45 cm</dd>
+        </dl>
+        <a class="watch" href="https://www.youtube.com/watch?v=B5ONU4xJAOg&amp;t=395s" target="_blank" rel="noopener"><i><svg viewBox="0 0 10 10"><path d="M2 1l7 4-7 4z"/></svg></i>Watch it come to life</a>
+      </div>
+      <div class="prose read">
+        <p>Built live during Araki-san's Aquascaping Masterclass at Aquashella New Jersey, two weeks before the Chicago Iwagumi. Araki-san spent four and a half years caring for the largest Nature Aquarium in the world, in Lisbon. For his 2021 Tokyo exhibition piece, he said he wanted visitors to see that the plants themselves are beautiful.</p>
+        <div class="look"><p class="label">What to look for</p><p>Notice how the plants reach toward the light, and how the fish move through the open water between the two groups of wood.</p></div>
+        <figure class="side-photo"><img src="photos/araki.jpg" alt="Daichi Araki with his layout at Aquashella New Jersey 2026" style="object-position:70% 50%"><figcaption class="cap">Daichi Araki at Aquashella New Jersey 2026. Photo © Aqua Design Amano</figcaption></figure>
+      </div>
+    </div>
+  </article>
+</main>
+
+<!-- CREATORS -->
+<main class="page" id="p-creators" data-page="creators" hidden>
+  <header class="page-head">
+    <p class="label">The Creators</p>
+    <h2>Who made <em>these</em></h2>
+    <p class="lede">Both are direct disciples of Takashi Amano, the photographer who invented Nature Aquarium. They learned at his side in Niigata and now carry the work forward.</p>
+  </header>
+  <section class="founder">
+    <div style="display:grid;gap:10px;align-content:start"><p class="label">The founder · 1954–2015</p><h3>Takashi Amano</h3><p class="jp" style="color:var(--muted)">天野 尚</p></div>
+    <p class="read" style="font-size:1.08rem">Photographer and founder of Aqua Design Amano in Niigata, Japan. He created the Nature Aquarium style: an aquarium that recreates a natural landscape as a living ecosystem of plants, stone, wood, fish and light. His last major work, <i>Forests Underwater</i> at the Oceanário de Lisboa (2015), is about 40 meters long.</p>
+  </section>
+  <section class="creators">
+    <div class="creator">
+      <div class="cr-head">
+        <figure class="portrait"><img src="photos/homma-portrait.jpg" alt="Yusuke Homma"><figcaption class="cap">ADA Suikei Creator #01 · Photo © Aqua Design Amano</figcaption></figure>
+        <div class="cr-name"><p class="label">ADA Suikei Creator #01</p><h3>Yusuke<br>Homma</h3><p class="jp">本間 裕介</p><p class="role">Leads the ADA Suikei Creator team · Niigata, Japan</p></div>
+      </div>
+      <blockquote>“Unless you learn the principles first, you can never express your originality.”<cite>Aqua Journal, <a href="https://www.adana.co.jp/en/aquajournal/iwagumiko_01/" target="_blank" rel="noopener">“Iwagumi Ko” (2021)</a></cite></blockquote>
+      <ul>
+        <li>Born in Shibata, Niigata. Joined ADA in 1993, straight out of high school, starting at the shop counter.</li>
+        <li>Worked beside Takashi Amano for nearly 20 years as layout and field photography assistant.</li>
+        <li>Leads ADA's Suikei Creator team since Amano's death in 2015.</li>
+        <li>Judge for the International Aquatic Plants Layout Contest (IAPLC).</li>
+        <li>Created <i>Breezy Stonescape</i>, a 7-meter Hakkai stone Iwagumi at AOAO Sapporo aquarium (2023).</li>
+      </ul>
+      <p class="more"><a href="https://www.adana.co.jp/en/aquajournal/adasuikeicreator_01/" target="_blank" rel="noopener">Read his profile on ADA Aqua Journal ↗</a> · <a href="https://www.adana.co.jp/en/aquajournal/aoao-sapporo-report-02/" target="_blank" rel="noopener">Breezy Stonescape at AOAO Sapporo ↗</a> · <a href="#works-homma">His work here</a></p>
+    </div>
+    <div class="creator">
+      <div class="cr-head">
+        <figure class="portrait"><img src="photos/araki-portrait.jpg" alt="Daichi Araki"><figcaption class="cap">ADA Suikei Creator #02 · Photo © Aqua Design Amano</figcaption></figure>
+        <div class="cr-name"><p class="label">ADA Suikei Creator #02</p><h3>Daichi<br>Araki</h3><p class="jp">荒木 大地</p><p class="role">ADA Suikei Creator · Niigata, Japan</p></div>
+      </div>
+      <blockquote>“Nature Aquarium is not just a way of copying nature, but a form of art.”<cite>Aqua Journal, <a href="https://www.adana.co.jp/en/aquajournal/adasuikeicreator_02/" target="_blank" rel="noopener">ADA Suikei Creator #02 (2020)</a></cite></blockquote>
+      <ul>
+        <li>Born in Aichi. Inspired by Nature Aquarium in high school, he moved to Niigata to work at ADA.</li>
+        <li>In 2015 he joined Amano's team building <i>Forests Underwater</i> in Lisbon, then led its maintenance for over four and a half years.</li>
+        <li>ADA Suikei Creator and workshop instructor in Japan and abroad; works in ADA's international marketing.</li>
+        <li>Created <i>Echinodorus Paradise</i> for the Nature Aquarium Exhibition 2021 in Tokyo.</li>
+      </ul>
+      <p class="more"><a href="https://www.adana.co.jp/en/aquajournal/adasuikeicreator_02/" target="_blank" rel="noopener">Read his profile on ADA Aqua Journal ↗</a> · <a href="#works-araki">His work here</a></p>
+    </div>
+  </section>
+</main>
+
+<!-- RESEARCH -->
+<main class="page" id="p-research" data-page="research" hidden>
+  <header class="page-head">
+    <p class="label">Research</p>
+    <h2>Why nature <em>heals</em></h2>
+    <p class="lede">Contact with living nature lowers stress and improves mood in many studies, including in hospitals. The evidence is promising but not final, which is why this gallery is a measured trial.</p>
+  </header>
+  <section class="findings">
+    <div class="finding"><div class="num">−4.8 mmHg</div><p>Systolic blood pressure fell about 4.8 mmHg when clinicians prescribed time in nature, with moderate drops in depression and anxiety.</p><small>28 studies · <a href="https://www1.racgp.org.au/newsgp/clinical/review-suggests-nature-prescriptions-benefit-physi" target="_blank" rel="noopener">The Lancet Planetary Health, 2023</a></small></div>
+    <div class="finding"><div class="num">Large</div><p>Nature-based programs reduced depression by a large amount in people diagnosed with anxiety, depression or stress.</p><small><a href="https://researchprofiles.ku.dk/en/publications/effect-of-nature-based-health-interventions-for-individuals-diagn/" target="_blank" rel="noopener">BMJ Open, 2025</a></small></div>
+    <div class="finding"><div class="num">= hypnosis</div><p>Watching an aquarium before oral surgery relaxed patients as much as hypnosis did, and more than looking at a poster.</p><small>42 patients · <a href="https://mandala.library.virginia.edu/subjects/9715/sources-node/21988/nojs" target="_blank" rel="noopener">Katcher et al.</a></small></div>
+    <div class="finding"><div class="num">+17%</div><p>Residents with Alzheimer's ate 17% more and were less agitated after aquariums came to their units. A photo of the sea had no effect.</p><small>60 residents · <a href="https://www.purdue.edu/uns/html4ever/1999/990628.Edwards.fish.html" target="_blank" rel="noopener">Purdue University</a></small></div>
+    <div class="finding"><div class="num">More fish</div><p>Heart rate fell and mood rose while people watched an aquarium, and fuller tanks worked better.</p><small><a href="https://www.plymouth.ac.uk/news/aquariums-deliver-health-and-wellbeing-benefits" target="_blank" rel="noopener">National Marine Aquarium, Plymouth, 2016</a></small></div>
+    <div class="finding"><div class="num">15 min</div><p>Fifteen minutes of handling plants lowered diastolic blood pressure from 71.8 to 65.3 mmHg compared with computer work.</p><small><a href="https://link.springer.com/article/10.1186/s40101-015-0060-8" target="_blank" rel="noopener">J. Physiological Anthropology, 2015</a></small></div>
+    <div class="finding"><div class="num">−10% stay</div><p>Surgical patients with a view of trees left hospital sooner and needed fewer strong painkillers than those facing a wall.</p><small><a href="https://landscapeperformance.org/fast-fact-library/hospital-room-views-improve-surgery-recovery" target="_blank" rel="noopener">Ulrich, Science, 1984</a></small></div>
+  </section>
+  <div class="counter"><p class="label">Where studies disagree</p><p>A 2021 Zurich trial found that a tank in a waiting room did not change blood pressure or anxiety over 20 minutes, though patients much preferred the room with fish (<a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0258118" target="_blank" rel="noopener">PLOS ONE</a>). That is why this gallery asks you to sit, look closely, and tell us what happened.</p></div>
+  <section style="display:grid;gap:40px">
+    <h3 style="font-size:clamp(2.2rem,4vw,3rem)">Library</h3>
+    <div class="lib">
+      <div><p class="label">Reviews of the evidence</p><ul>
+        <li><a href="https://www.thelancet.com/journals/lanplh/article/piis2542-5196(23)00025-6/fulltext" target="_blank" rel="noopener">Nature prescriptions, Lancet Planetary Health (2023)</a></li>
+        <li><a href="https://researchprofiles.ku.dk/en/publications/effect-of-nature-based-health-interventions-for-individuals-diagn/" target="_blank" rel="noopener">Nature-based interventions, BMJ Open (2025)</a></li>
+        <li><a href="https://www.nature.com/articles/s41746-025-02057-4" target="_blank" rel="noopener">Virtual nature and anxiety, npj Digital Medicine (2025)</a></li>
+        <li><a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0220524" target="_blank" rel="noopener">Fish in aquariums and well-being, PLOS ONE (2019)</a></li>
+        <li><a href="https://eepro.naaee.org/research/eeresearch/gardening-beneficial-health-meta-analysis" target="_blank" rel="noopener">Gardening and health meta-analysis (2017)</a></li>
+        <li><a href="https://www.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2026.1786483/full" target="_blank" rel="noopener">Biophilic design in hospitals, Frontiers (2026)</a></li>
+      </ul></div>
+      <div><p class="label">Studies</p><ul>
+        <li><a href="https://landscapeperformance.org/fast-fact-library/hospital-room-views-improve-surgery-recovery" target="_blank" rel="noopener">Window views and surgery recovery (Ulrich)</a></li>
+        <li><a href="https://www.sciencedaily.com/releases/2008/12/081229104700.htm" target="_blank" rel="noopener">Plants in hospital rooms (Kansas State)</a></li>
+        <li><a href="https://link.springer.com/article/10.1186/s40101-015-0060-8" target="_blank" rel="noopener">Indoor plants and stress (Lee, 2015)</a></li>
+        <li><a href="https://scholar.harvard.edu/sites/scholar.harvard.edu/files/jieyin/files/2020_yin_et_al_ei_effects_of_biophilic_indoor_environment_on_stress_and_anxiety_recovery_a_between-subjects_experiment_in_virtual_reality.pdf" target="_blank" rel="noopener">Biophilic offices and stress recovery (Harvard)</a></li>
+        <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7985762/" target="_blank" rel="noopener">Bottle aquariums for older adults (Japan, 2021)</a></li>
+        <li><a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0258118" target="_blank" rel="noopener">Waiting-room aquarium trial (Zurich)</a></li>
+      </ul></div>
+      <div><p class="label">In practice</p><ul>
+        <li><a href="https://ivantheangelfish.org/" target="_blank" rel="noopener">Ivan the Angelfish, aquariums for mental health</a></li>
+        <li><a href="https://www.ktvu.com/video/fmc-fwvten3aj08625pm" target="_blank" rel="noopener">“Healing through aquariums,” KTVU FOX 2</a></li>
+        <li><a href="https://www.grapevinebirmingham.com/birmingham-childrens-hospital-charity-calls-on-patients-to-help-bring-its-fin-tastic-new-aquarium-to-life/" target="_blank" rel="noopener">Birmingham Children's Hospital reef aquarium</a></li>
+        <li><a href="https://hga.com/beyond-aesthetics-biophilic-design-as-essential-healthcare-infrastructure/" target="_blank" rel="noopener">Biophilic design as healthcare infrastructure (HGA)</a></li>
+        <li><a href="https://www.parkprescriptions.ca/" target="_blank" rel="noopener">PaRx, a prescription for nature</a></li>
+      </ul></div>
+      <div><p class="label">Nature Aquarium (ADA)</p><ul>
+        <li><a href="https://www.adana.co.jp/en/" target="_blank" rel="noopener">Aqua Design Amano</a></li>
+        <li><a href="https://www.adana.co.jp/en/aquajournal/iwagumiko_01/" target="_blank" rel="noopener">Iwagumi Ko, Yusuke Homma</a></li>
+        <li><a href="https://www.adana.co.jp/en/aquajournal/ada-suikei-creators-01/" target="_blank" rel="noopener">Suikei Creators #01, Yusuke Homma</a></li>
+        <li><a href="https://www.adana.co.jp/en/aquajournal/adasuikeicreator_02/" target="_blank" rel="noopener">Suikei Creator #02, Daichi Araki</a></li>
+        <li><a href="https://www.adana.co.jp/en/aquajournal/ada-suikei-creators-05/" target="_blank" rel="noopener">Suikei Creators #05, Daichi Araki</a></li>
+      </ul></div>
+    </div>
+  </section>
+</main>
+
+<!-- VISIT -->
+<main class="page" id="p-visit" data-page="visit" hidden>
+  <header class="page-head">
+    <p class="label">Visit</p>
+    <h2>Five minutes <em>with nature</em></h2>
+    <p class="lede">You do not need to know anything about aquariums. Find a seat, put your phone face down, and give the tanks five quiet minutes.</p>
+  </header>
+  <section class="steps">
+    <div class="step"><span class="t">Sit</span><p>Choose one tank and sit at eye level with it. Let your shoulders drop.</p></div>
+    <div class="step"><span class="t">Watch</span><p>Follow one fish for a while. Then watch the water move across the plants.</p></div>
+    <div class="step"><span class="t">Breathe</span><p>Breathe slowly. Notice the stones, the light, and the open space between things.</p></div>
+    <div class="step"><span class="t">Tell us</span><p>Before you leave, take a minute to say how you feel. It decides whether the gallery stays.</p></div>
+  </section>
+  <section class="facts">
+    <div class="fact"><b>5 minutes</b><span>A short pause is enough. Start the guided timer and let it tell you when time is up.</span></div>
+    <div class="fact"><b>Free and open</b><span>For students, faculty, staff, patients and visitors.</span></div>
+    <div class="fact"><b>Please do not touch</b><span>Keep hands off the glass and equipment. The tanks are living systems.</span></div>
+    <div class="fact"><b>Changes every week</b><span>Plants grow and fill in. Come back and see what moved.</span></div>
+  </section>
+  <div style="display:flex;flex-wrap:wrap;gap:14px"><button class="begin" type="button" data-begin>Begin five minutes</button><a class="cta" href="#review">Leave a review</a></div>
+</main>
+
+<!-- REVIEW -->
+<main class="page" id="p-review" data-page="review" hidden>
+  <header class="page-head">
+    <p class="label">Review desk</p>
+    <h2>Should this <em>stay?</em></h2>
+    <p class="lede">Your review decides whether this gallery is still here in three months. It takes about a minute. Your name is optional.</p>
+  </header>
+  <div class="desk-grid">
+    <div style="display:grid;gap:16px;min-width:0">
+      <form class="desk" id="desk" novalidate>
+        <fieldset>
+          <legend>Should this gallery stay after the trial?</legend>
+          <div class="chips">
+            <label><input type="radio" name="keep" id="keep-yes" value="yes" required><span>Yes, keep it</span></label>
+            <label><input type="radio" name="keep" id="keep-unsure" value="unsure"><span>Not sure</span></label>
+            <label><input type="radio" name="keep" id="keep-no" value="no"><span>No, remove it</span></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>How do you feel after spending time here?</legend>
+          <div class="chips">
+            <label><input type="radio" name="feel" id="feel-1" value="1"><span>More tense</span></label>
+            <label><input type="radio" name="feel" id="feel-2" value="2"><span>A little tense</span></label>
+            <label><input type="radio" name="feel" id="feel-3" value="3"><span>No change</span></label>
+            <label><input type="radio" name="feel" id="feel-4" value="4"><span>A little calmer</span></label>
+            <label><input type="radio" name="feel" id="feel-5" value="5"><span>Much calmer</span></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Which piece stayed with you?</legend>
+          <div class="chips">
+            <label><input type="radio" name="piece" id="piece-homma" value="homma"><span>Homma Iwagumi</span></label>
+            <label><input type="radio" name="piece" id="piece-araki" value="araki"><span>Araki layout</span></label>
+            <label><input type="radio" name="piece" id="piece-both" value="both"><span>Both</span></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Would you like more plants and living nature on campus?</legend>
+          <div class="chips">
+            <label><input type="radio" name="more" id="more-yes" value="yes"><span>Yes, more please</span></label>
+            <label><input type="radio" name="more" id="more-enough" value="enough"><span>This is enough</span></label>
+            <label><input type="radio" name="more" id="more-no" value="no"><span>Not needed</span></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>I am a…</legend>
+          <div class="chips">
+            <label><input type="radio" name="role" id="role-student" value="Student"><span>Student</span></label>
+            <label><input type="radio" name="role" id="role-staff" value="Faculty or staff"><span>Faculty or staff</span></label>
+            <label><input type="radio" name="role" id="role-patient" value="Patient"><span>Patient</span></label>
+            <label><input type="radio" name="role" id="role-visitor" value="Visitor"><span>Visitor</span></label>
+          </div>
+        </fieldset>
+        <fieldset><legend><label for="rv-name">Your name <span style="color:var(--muted);font-size:.7em">(optional)</span></label></legend><input type="text" id="rv-name" maxlength="60" autocomplete="off"></fieldset>
+        <fieldset><legend><label for="rv-comment">Your review</label></legend>
+          <textarea id="rv-comment" maxlength="800" placeholder="What did you notice? How did it feel to sit here?"></textarea>
+        </fieldset>
+        <button class="submit" type="submit" id="rv-submit">Submit review</button>
+        <p class="status" id="rv-status" role="status"></p>
+      </form>
+      <div class="thanks" id="thanks" hidden><h3>Thank you</h3><p>Your review has been added. The form will reset for the next person in a few seconds.</p></div>
+      <div class="readonly" id="readonly" hidden></div>
+    </div>
+    <aside class="side">
+      <p class="label">So far</p>
+      <div class="tally" aria-live="polite">
+        <div class="yes"><div class="n" id="t-yes">0</div><div class="k">Keep it</div></div>
+        <div><div class="n" id="t-unsure">0</div><div class="k">Not sure</div></div>
+        <div><div class="n" id="t-no">0</div><div class="k">Remove it</div></div>
+      </div>
+      <div class="bar" aria-hidden="true"><span class="y" id="b-yes" style="width:0"></span><span class="u" id="b-unsure" style="width:0"></span><span class="no" id="b-no" style="width:0"></span></div>
+      <p class="status" id="t-meta">Loading reviews…</p>
+      <div class="tally stats" aria-live="polite">
+        <div><div class="n" id="t-visits">0</div><div class="k">Visits</div></div>
+        <div><div class="n" id="t-pauses">0</div><div class="k">5-min pauses</div></div>
+        <div><div class="n" id="t-today">0</div><div class="k">Visits today</div></div>
+      </div>
+      <p class="label" style="margin-top:12px">What people said</p>
+      <div class="reviews" id="reviews"><p class="empty">No reviews yet. Be the first to leave one.</p></div>
+    </aside>
+  </div>
+</main>
+
+<section class="closing">
+  <p class="sig">Watch. Breathe. <em>Reset.</em></p>
+  <p class="label">Pause here for a moment. Then continue your day.</p>
+</section>
+<footer>
+  <p>Pieces of Nature on Campus is a 3-month pilot. Quotes from ADA's Aqua Journal are used with attribution and link to the original articles.</p>
+  <div class="visits" aria-label="Visitors"><span><b id="f-today">0</b> today</span><span><b id="f-total">0</b> total visitors</span><span>Curated by Byung Kim</span></div>
+</footer>
+</div>
+
+
+<audio id="bgm" preload="none"></audio>
+<div class="session" id="session" hidden role="dialog" aria-modal="true" aria-label="Five-minute pause">
+  <img class="bgimg" src="photos/homma-wide.jpg" alt="">
+  <div class="stage" id="s-run">
+    <p class="label">Five minutes with nature</p>
+    <div class="orb" aria-hidden="true"><span id="s-breath">Breathe in</span></div>
+    <p class="prompt" id="s-prompt">Settle in. Let your shoulders drop.</p>
+    <div style="display:grid;gap:14px;justify-items:center"><div class="track"><b id="s-bar"></b></div><p class="clock" id="s-clock">5:00</p></div>
+    <div class="s-music" id="s-music"><span class="label">Music</span></div>
+    <button class="end" type="button" id="s-end">End early</button>
+  </div>
+  <div class="stage done" id="s-done" hidden>
+    <p class="label">Five minutes</p>
+    <h3>Welcome back.</h3>
+    <p class="prompt" style="min-height:0;font-size:clamp(1.3rem,3vw,1.8rem)">How do you feel? Tell us in one minute.</p>
+    <div class="row"><a class="begin" href="#review" id="s-review">Leave a review</a><button class="cta" type="button" id="s-close" style="background:none;cursor:pointer">Close</button></div>
+  </div>
+</div>
+
+<script>
+
+
+/* in-page music: free tracks published with the site; one <audio> survives page changes because the site is one document */
+(function(){
+  const TRACKS = [
+    {title:'Calm Nature',        sub:'Soft piano and strings · 3:19', src:'music/calm-nature.mp3'},
+    {title:'Beautiful Nature',   sub:'Gentle, open and warm · 3:05',  src:'music/beautiful-nature.mp3'},
+    {title:'Inspirational Calm', sub:'Slow build, quiet hope · 3:13', src:'music/inspirational-calm.mp3'},
+    {title:'Calm Uplifting',     sub:'Light and easy · 2:44',         src:'music/calm-uplifting.mp3'}
+  ];
+  const b=document.getElementById('snd'), menu=document.getElementById('snd-menu'), lab=document.getElementById('snd-label');
+  const list=document.getElementById('track-list'), now=document.getElementById('now'), pp=document.getElementById('pp'), nt=document.getElementById('now-title'), ntime=document.getElementById('now-time');
+  const audio=document.getElementById('bgm'), sm=document.getElementById('s-music');
+  let cur=-1;
+  function openMenu(v){ menu.hidden=!v; b.setAttribute('aria-expanded',v?'true':'false'); }
+  b.addEventListener('click',()=>openMenu(menu.hidden));
+  document.addEventListener('click',e=>{ if(!menu.hidden && !e.target.closest('.snd-wrap')) openMenu(false); });
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape') openMenu(false); });
+  function fmt(t){ t=Math.floor(t||0); return Math.floor(t/60)+':'+String(t%60).padStart(2,'0'); }
+  function render(){
+    list.textContent=''; sm.textContent=''; const l=document.createElement('span'); l.className='label'; l.textContent='Music'; sm.appendChild(l);
+    if(!TRACKS.length){ const p=document.createElement('p'); p.className='empty'; p.style.padding='8px'; p.textContent='Tracks are on their way.'; list.appendChild(p); return; }
+    TRACKS.forEach((t,i)=>{
+      const o=document.createElement('button'); o.type='button'; o.className='snd-opt'; o.setAttribute('role','menuitemradio'); o.setAttribute('aria-checked', i===cur && !audio.paused ? 'true':'false');
+      o.innerHTML='<i></i><span><b></b><small></small></span>'; o.querySelector('b').textContent=t.title; o.querySelector('small').textContent=t.sub||'';
+      o.addEventListener('click',()=>{ play(i); }); list.appendChild(o);
+      const a=document.createElement('button'); a.type='button'; a.className='s-link'; a.textContent=t.title; a.setAttribute('aria-pressed', i===cur && !audio.paused ? 'true':'false'); a.addEventListener('click',()=>play(i)); sm.appendChild(a);
+    });
+    const off=document.createElement('button'); off.type='button'; off.className='s-link'; off.textContent='Off'; off.addEventListener('click',stop); sm.appendChild(off);
+  }
+  function play(i){
+    if(i===cur && !audio.paused){ audio.pause(); render(); update(); return; }
+    if(i!==cur){ cur=i; audio.src=TRACKS[i].src; audio.load(); }
+    const p=audio.play(); if(p&&p.catch) p.catch(()=>{});
+    try{ localStorage.setItem('pon-track', String(i)); }catch(e){}
+    render(); update();
+  }
+  function stop(){ audio.pause(); cur=-1; audio.removeAttribute('src'); audio.load(); render(); update(); }
+  function update(){
+    const on = cur>=0 && !audio.paused;
+    b.setAttribute('aria-pressed', on?'true':'false'); lab.textContent = on ? TRACKS[cur].title : 'Music';
+    now.hidden = cur<0; if(cur>=0){ nt.textContent=TRACKS[cur].title; pp.classList.toggle('paused', audio.paused); pp.setAttribute('aria-label', audio.paused?'Play':'Pause'); }
+  }
+  pp.addEventListener('click',()=>{ if(cur<0) return; if(audio.paused){ const p=audio.play(); if(p&&p.catch) p.catch(()=>{}); } else audio.pause(); render(); update(); });
+  audio.addEventListener('timeupdate',()=>{ ntime.textContent=fmt(audio.currentTime)+' / '+fmt(audio.duration); });
+  audio.addEventListener('ended',()=>{ if(cur>=0) play((cur+1)%TRACKS.length); });
+  audio.addEventListener('play',()=>{ render(); update(); }); audio.addEventListener('pause',()=>{ render(); update(); });
+  window.PON_PLAYER = { play, stop, get playing(){ return cur>=0 && !audio.paused; } };
+  render(); update();
+})();
+
+/* rising CO2-style bubbles over the hero */
+(function(){
+  const c = document.getElementById('bubbles'); if (!c) return;
+  let reduce=false; try{reduce=matchMedia('(prefers-reduced-motion: reduce)').matches}catch(e){}
+  if (reduce) return;
+  const ctx = c.getContext('2d'); let W=0,H=0,dpr=1, B=[];
+  function size(){ dpr=Math.min(2,window.devicePixelRatio||1); W=c.clientWidth; H=c.clientHeight; c.width=W*dpr; c.height=H*dpr; ctx.setTransform(dpr,0,0,dpr,0,0); }
+  function spawn(y){ return {x: W*(.12+Math.random()*.76), y: y ?? H+10, r: .8+Math.random()*2.2, v: .18+Math.random()*.5, w: Math.random()*Math.PI*2, a: .25+Math.random()*.45}; }
+  size(); for(let i=0;i<46;i++) B.push(spawn(Math.random()*H));
+  window.addEventListener('resize', size);
+  function tick(){
+    ctx.clearRect(0,0,W,H);
+    for(const b of B){
+      b.y -= b.v; b.w += .02; const x = b.x + Math.sin(b.w)*3;
+      ctx.beginPath(); ctx.arc(x,b.y,b.r,0,Math.PI*2);
+      ctx.strokeStyle = 'rgba(214,240,243,'+b.a+')'; ctx.lineWidth=.8; ctx.stroke();
+      ctx.fillStyle = 'rgba(214,240,243,'+(b.a*.25)+')'; ctx.fill();
+      if (b.y < -10) Object.assign(b, spawn());
+    }
+    if (!document.hidden && !document.getElementById('p-home').hidden) requestAnimationFrame(tick); else setTimeout(()=>requestAnimationFrame(tick),400);
+  }
+  requestAnimationFrame(tick);
+})();
+
+/* guided five-minute session */
+(function(){
+  const $ = id => document.getElementById(id);
+  const ov = $('session'); if (!ov) return;
+  const TOTAL = 300;
+  const PROMPTS = [
+    'Settle in. Let your shoulders drop.',
+    'Watch the water move.',
+    'Follow one fish for a while.',
+    'Find the largest stone. Notice how the others lean toward it.',
+    'Breathe slowly. In, and out.',
+    'Look at the light on the leaves.',
+    'Notice the open space between things.',
+    'Listen. Let the room go quiet.',
+    'Follow the water as it moves past the stones.',
+    'Stay here a little longer.'
+  ];
+  let t0=0, timer=null, breathT=null, lock=null, lastIdx=-1;
+  const fmt = s => Math.floor(s/60)+':'+String(s%60).padStart(2,'0');
+  function setPrompt(i){
+    if (i===lastIdx) return; lastIdx=i;
+    const p=$('s-prompt'); p.classList.add('fade');
+    setTimeout(()=>{ p.textContent=PROMPTS[i]; p.classList.remove('fade'); },1200);
+  }
+  function update(){
+    const el = Math.min(TOTAL, Math.floor((Date.now()-t0)/1000));
+    $('s-clock').textContent = fmt(TOTAL-el);
+    $('s-bar').style.width = (el/TOTAL*100)+'%';
+    setPrompt(Math.min(PROMPTS.length-1, Math.floor(el/(TOTAL/PROMPTS.length))));
+    if (el>=TOTAL) finish();
+  }
+  async function begin(){
+    lastIdx=-1; $('s-prompt').textContent=PROMPTS[0]; lastIdx=0;
+    $('s-run').hidden=false; $('s-done').hidden=true; ov.hidden=false;
+    document.body.style.overflow='hidden';
+    t0=Date.now(); update(); clearInterval(timer); timer=setInterval(update,1000);
+    let inhale=true; $('s-breath').textContent='Breathe in';
+    clearInterval(breathT); breathT=setInterval(()=>{inhale=!inhale; $('s-breath').textContent=inhale?'Breathe in':'Breathe out';},5000);
+    try{ if (navigator.wakeLock) lock = await navigator.wakeLock.request('screen'); }catch(e){ lock=null; }
+  }
+  function stopTimers(){ clearInterval(timer); clearInterval(breathT); try{ lock && lock.release(); }catch(e){} lock=null; }
+  function logPause(){ if (!t0) return; const sec=(Date.now()-t0)/1000; t0=0; try{ window.recordPause && window.recordPause(Math.min(sec,TOTAL), sec>=TOTAL-1); }catch(e){} }
+  function finish(){ logPause(); stopTimers(); $('s-run').hidden=true; $('s-done').hidden=false; }
+  function close(){ logPause(); stopTimers(); ov.hidden=true; document.body.style.overflow=''; }
+  document.querySelectorAll('[data-begin]').forEach(b=>b.addEventListener('click',begin));
+  $('s-end').addEventListener('click',finish);
+  $('s-close').addEventListener('click',close);
+  $('s-review').addEventListener('click',close);
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape' && !ov.hidden) close(); });
+})();
+
+/* hero video: small file on phones, retry on first touch, photo only if it truly cannot play */
+(function(){
+  const v=document.getElementById('hero-video'), h=document.querySelector('.hero'); if(!v||!h) return;
+  const small = Math.min(window.innerWidth, window.innerHeight) < 700;
+  v.src = small ? 'photos/hero-m.mp4' : 'photos/hero.mp4';
+  v.muted = true; v.defaultMuted = true; v.setAttribute('muted','');
+  let tries=0;
+  function attempt(){ tries++; const p=v.play&&v.play(); if(p&&p.catch) p.catch(()=>{}); }
+  attempt();
+  v.addEventListener('error',()=>h.classList.remove('has-video'),true);
+  ['touchstart','pointerdown','scroll'].forEach(ev=>window.addEventListener(ev,()=>{ if(v.paused && tries<6) attempt(); },{passive:true}));
+  setTimeout(()=>{ if(v.paused && v.readyState<2) h.classList.remove('has-video'); }, 8000);
+})();
+/* nav background once scrolled past the hero top */
+(function(){
+  const nav = document.getElementById('topnav');
+  const onScroll = () => nav.classList.toggle('solid', window.scrollY > 40);
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+})();
+
+/* breathing word, synced to the 10s orb cycle */
+(function(){
+  const w = document.getElementById('breath-word');
+  if (!w) return;
+  let reduce = false; try { reduce = matchMedia('(prefers-reduced-motion: reduce)').matches; } catch(e){}
+  if (reduce){ w.textContent = 'Breathe'; return; }
+  let inhale = true;
+  setInterval(() => { inhale = !inhale; w.textContent = inhale ? 'Breathe in' : 'Breathe out'; }, 5000);
+})();
+
+/* router: each room is a page; #works-homma style anchors open the parent page and scroll to the work */
+(function(){
+  const PAGES = ['home','works','creators','research','visit','review'];
+  const ALIAS = {why:'research', library:'research'};
+  function route(){
+    let h = (location.hash || '').replace('#','');
+    if (ALIAS[h]) h = ALIAS[h];
+    let page = h.split('-')[0];
+    if (!PAGES.includes(page)) page = 'home';
+    document.querySelectorAll('.page').forEach(p => { p.hidden = p.dataset.page !== page; });
+    document.querySelectorAll('#nav a').forEach(a => {
+      if (a.getAttribute('href').slice(1) === page) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');
+    });
+    const target = h.includes('-') ? document.getElementById(h) : null;
+    try {
+      if (target) window.scrollTo(0, target.getBoundingClientRect().top + window.scrollY - 70);
+      else window.scrollTo(0,0);
+    } catch(e){}
+  }
+  window.addEventListener('hashchange', route);
+  route();
+})();
+
+/* review desk: submissions go to a Google Form (no sign-in), results are read back from its Google Sheet */
+(function(){
+  const $ = id => document.getElementById(id);
+  const form = $('desk'), statusEl = $('rv-status'), btn = $('rv-submit');
+  const CFG = {
+    reviewForm: 'https://docs.google.com/forms/d/e/1FAIpQLSeWn9ax-MOghwmapfzMBWASbW_LO1cHVLsA1YRF5CUFE6bAig/formResponse',
+    reviewSheet: '1fhStL-mjrdK6htB9LFLIADKqEqI8LI2kzC0tywaXaIo',
+    visitForm: 'https://docs.google.com/forms/d/e/1FAIpQLSdRhz1eOTXmYX5aBIMntC_l0MqXnfGHK7sw_3mlsFXGD1NezA/formResponse',
+    visitSheet: '1Za3hknjMiUIyeb0zPFIX-6OJ_KIq2mkeKtL8IEMXe-c',
+    E: { keep:'entry.1958059982', feel:'entry.1240852443', piece:'entry.1289875087', more:'entry.1436787534', role:'entry.592732087', name:'entry.1954014878', comment:'entry.345775042', kind:'entry.724501129' }
+  };
+  const KEEP_V = {yes:'Yes, keep it', unsure:'Not sure', no:'No, remove it'};
+  const FEEL_V = {1:'More tense',2:'A little tense',3:'No change',4:'A little calmer',5:'Much calmer'};
+  const PIECE_V = {homma:'Homma Iwagumi', araki:'Araki Nature Aquarium', both:'Both'};
+  const MORE_V = {yes:'Yes, more please', enough:'This is enough', no:'Not needed'};
+  const KEEP_K = Object.fromEntries(Object.entries(KEEP_V).map(([k,v])=>[v,k]));
+  const FEEL_K = Object.fromEntries(Object.entries(FEEL_V).map(([k,v])=>[v,Number(k)]));
+  const PIECE_K = Object.fromEntries(Object.entries(PIECE_V).map(([k,v])=>[v,k]));
+  const MORE_K = Object.fromEntries(Object.entries(MORE_V).map(([k,v])=>[v,k]));
+
+  function post(url, data){
+    const body = new URLSearchParams(data).toString();
+    return fetch(url, {method:'POST', mode:'no-cors', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body});
+  }
+  // read a public sheet through the Visualization API (JSONP, so it works from any site)
+  let jp = 0;
+  function readSheet(id, cb, onErr){
+    const name = '__gviz' + (++jp);
+    const s = document.createElement('script');
+    const timer = setTimeout(()=>{ cleanup(); onErr && onErr(); }, 12000);
+    function cleanup(){ clearTimeout(timer); try{ delete window[name]; }catch(e){ window[name]=undefined; } s.remove(); }
+    window[name] = resp => { cleanup(); try { const t = resp.table; const cols = t.cols.map(c => c.label || c.id); const rows = (t.rows||[]).map(r => Object.fromEntries((r.c||[]).map((c,i) => [cols[i], c ? (c.f ?? c.v) : null]))); cb(rows); } catch(e){ onErr && onErr(); } };
+    s.src = 'https://docs.google.com/spreadsheets/d/'+id+'/gviz/tq?tqx=out:json;responseHandler:'+name+'&headers=1&_='+Date.now();
+    s.onerror = ()=>{ cleanup(); onErr && onErr(); };
+    document.head.appendChild(s);
+  }
+  function parseTs(v){ if(!v) return null; const d = new Date(v); return isNaN(d) ? null : d; }
+  function today(){ const d=new Date(); return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
+  function dayOf(d){ return d ? d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0') : ''; }
+
+  function normalize(rows){
+    return rows.map(r => {
+      const k = Object.keys(r);
+      const get = (pref) => { const key = k.find(x => x.toLowerCase().startsWith(pref)); return key ? r[key] : null; };
+      return {
+        createdAt: parseTs(get('timestamp')),
+        keep: KEEP_K[get('should this gallery')] || 'unsure',
+        feel: FEEL_K[get('how do you feel')] || null,
+        piece: PIECE_K[get('which piece')] || null,
+        more: MORE_K[get('would you like more')] || null,
+        role: get('i am a') || null,
+        name: get('your name') || null,
+        comment: get('your review') || null
+      };
+    }).filter(r => r.createdAt).sort((a,b) => b.createdAt - a.createdAt);
+  }
+
+  function renderTally(rows){
+    const c = {yes:0, unsure:0, no:0};
+    rows.forEach(r => { if (c[r.keep] !== undefined) c[r.keep]++; });
+    const total = c.yes + c.unsure + c.no;
+    $('t-yes').textContent = c.yes; $('t-unsure').textContent = c.unsure; $('t-no').textContent = c.no;
+    const pct = n => total ? (n / total * 100).toFixed(1) + '%' : '0';
+    $('b-yes').style.width = pct(c.yes); $('b-unsure').style.width = pct(c.unsure); $('b-no').style.width = pct(c.no);
+    const calm = rows.filter(r => r.feel >= 4).length, felt = rows.filter(r => r.feel).length;
+    const moreYes = rows.filter(r => r.more === 'yes').length, moreAns = rows.filter(r => r.more).length;
+    $('t-meta').textContent = total
+      ? `${total} review${total === 1 ? '' : 's'} so far · ${Math.round(c.yes / total * 100)}% say keep it` + (felt ? ` · ${Math.round(calm / felt * 100)}% felt calmer` : '') + (moreAns ? ` · ${Math.round(moreYes / moreAns * 100)}% want more plants` : '')
+      : 'No reviews yet.';
+    const hc = $('home-count'), hm = $('home-meta');
+    if (hc){ hc.textContent = total; }
+    if (hm){ hm.textContent = total ? `${Math.round(c.yes / total * 100)}% say keep it` + (felt ? `, ${Math.round(calm / felt * 100)}% felt calmer.` : '.') : 'Be the first to sit with the tanks and tell us.'; }
+  }
+  const FEEL = FEEL_V, PIECE = {homma:'Homma Iwagumi', araki:'Araki layout', both:'Both pieces'}, KEEP = {yes:'Keep it', unsure:'Not sure', no:'Remove it'};
+  function renderList(rows){
+    const box = $('reviews');
+    box.textContent = '';
+    if (!rows.length){ const p = document.createElement('p'); p.className = 'empty'; p.textContent = 'No reviews yet. Be the first to leave one.'; box.appendChild(p); return; }
+    rows.forEach(r => {
+      const el = document.createElement('article'); el.className = 'rv';
+      const meta = document.createElement('div'); meta.className = 'meta';
+      const pill = document.createElement('span'); pill.className = 'pill ' + (KEEP[r.keep] ? r.keep : 'unsure'); pill.textContent = KEEP[r.keep] || '—'; meta.appendChild(pill);
+      const who = document.createElement('span'); who.textContent = [r.name || 'Anonymous', r.role].filter(Boolean).join(' · '); meta.appendChild(who);
+      if (r.feel && FEEL[r.feel]){ const f = document.createElement('span'); f.textContent = '· ' + FEEL[r.feel]; meta.appendChild(f); }
+      if (r.more === 'yes'){ const f = document.createElement('span'); f.textContent = '· Wants more plants'; meta.appendChild(f); }
+      if (r.piece && PIECE[r.piece]){ const f = document.createElement('span'); f.textContent = '· ' + PIECE[r.piece]; meta.appendChild(f); }
+      if (r.createdAt){ const d = document.createElement('span'); try { d.textContent = '· ' + r.createdAt.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}); } catch(e){} meta.appendChild(d); }
+      el.appendChild(meta);
+      if (r.comment){ const p = document.createElement('p'); p.textContent = r.comment; el.appendChild(p); }
+      box.appendChild(el);
+    });
+  }
+
+  let cache = [];
+  function refresh(){
+    readSheet(CFG.reviewSheet, rows => { cache = normalize(rows); renderTally(cache); renderList(cache.slice(0, 60)); },
+      () => { if (!cache.length) $('t-meta').textContent = 'Reviews will appear here shortly.'; });
+    readSheet(CFG.visitSheet, rows => {
+      const t = today(); let v=0, vt=0, p=0;
+      rows.forEach(r => { const k = Object.keys(r); const kind = r[k.find(x=>x.toLowerCase()==='kind')] || ''; const d = parseTs(r[k.find(x=>x.toLowerCase().startsWith('timestamp'))]);
+        if (kind === 'visit'){ v++; if (dayOf(d) === t) vt++; } else if (kind === 'pause') p++; });
+      ['t-visits','f-total'].forEach(id => { if ($(id)) $(id).textContent = v; });
+      ['t-today','f-today'].forEach(id => { if ($(id)) $(id).textContent = vt; });
+      if ($('t-pauses')) $('t-pauses').textContent = p;
+    }, () => {});
+  }
+
+  let resetTimer = null;
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    statusEl.className = 'status'; statusEl.textContent = '';
+    const keep = form.querySelector('input[name=keep]:checked');
+    if (!keep){ statusEl.className = 'status err'; statusEl.textContent = 'Please answer the first question: should this gallery stay?'; return; }
+    const val = n => { const x = form.querySelector(`input[name=${n}]:checked`); return x ? x.value : ''; };
+    const data = {};
+    data[CFG.E.keep] = KEEP_V[keep.value];
+    if (val('feel')) data[CFG.E.feel] = FEEL_V[val('feel')];
+    if (val('piece')) data[CFG.E.piece] = PIECE_V[val('piece')];
+    if (val('more')) data[CFG.E.more] = MORE_V[val('more')];
+    if (val('role')) data[CFG.E.role] = val('role');
+    const nm = $('rv-name').value.trim().slice(0, 60); if (nm) data[CFG.E.name] = nm;
+    const cm = $('rv-comment').value.trim().slice(0, 800); if (cm) data[CFG.E.comment] = cm;
+    btn.disabled = true; statusEl.textContent = 'Saving…';
+    try {
+      await post(CFG.reviewForm, data);
+      // show it right away, then let the sheet catch up
+      cache.unshift({createdAt:new Date(), keep:keep.value, feel:Number(val('feel'))||null, piece:val('piece')||null, more:val('more')||null, role:val('role')||null, name:nm||null, comment:cm||null});
+      renderTally(cache); renderList(cache.slice(0,60));
+      form.reset(); statusEl.textContent = '';
+      form.hidden = true; $('thanks').hidden = false;
+      clearTimeout(resetTimer);
+      resetTimer = setTimeout(() => { $('thanks').hidden = true; form.hidden = false; try { window.scrollTo(0,0); } catch(e){} }, 6000);
+      setTimeout(refresh, 4000);
+    } catch (err) {
+      statusEl.className = 'status err'; statusEl.textContent = 'Your review could not be saved. Please check your connection and try again.';
+    } finally { btn.disabled = false; }
+  });
+
+  function recordVisit(){
+    let seen=false; try{ seen = sessionStorage.getItem('pon-visit')==='1'; }catch(e){}
+    if (seen) return;
+    const d = {}; d[CFG.E.kind] = 'visit';
+    post(CFG.visitForm, d).then(()=>{ try{ sessionStorage.setItem('pon-visit','1'); }catch(e){} }).catch(()=>{});
+  }
+  window.recordPause = function(seconds, completed){
+    if (seconds < 30) return;
+    const d = {}; d[CFG.E.kind] = 'pause';
+    post(CFG.visitForm, d).catch(()=>{});
+  };
+
+  recordVisit();
+  refresh();
+  setInterval(refresh, 60000);
+})();
+</script>
+
+</body>
+</html>
