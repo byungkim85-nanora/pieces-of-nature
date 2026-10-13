@@ -85,7 +85,8 @@ nav.top .wrap{display:flex;align-items:center;gap:28px}
 .hero.has-video video{display:block}
 .hero.has-video img{display:none}
 @media (prefers-reduced-motion:no-preference){.hero img,.hero video{animation:drift 28s ease-in-out infinite alternate}@keyframes drift{from{transform:scale(1.02)}to{transform:scale(1.1) translateY(-1.5%)}}}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,var(--bg) 3%,rgba(247,245,239,.72) 22%,rgba(247,245,239,.28) 42%,rgba(247,245,239,0) 58%)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,var(--bg) 4%,rgba(247,245,239,.8) 26%,rgba(247,245,239,.35) 46%,rgba(247,245,239,0) 62%)}
+@media (max-width:760px){.hero::after{background:linear-gradient(to top,var(--bg) 6%,rgba(247,245,239,.94) 34%,rgba(247,245,239,.72) 56%,rgba(247,245,239,.2) 76%,rgba(247,245,239,0))}.hero .inner .wrap{text-shadow:0 1px 0 rgba(247,245,239,1),0 0 10px rgba(247,245,239,1),0 0 24px rgba(247,245,239,1),0 0 48px rgba(247,245,239,.9)}}
 .hero .inner .wrap{text-shadow:0 1px 0 rgba(247,245,239,.9),0 0 18px rgba(247,245,239,.9),0 0 40px rgba(247,245,239,.7)}
 .hero .inner{position:relative;z-index:2;padding:0 24px clamp(40px,7vh,88px);width:100%}
 .hero .inner .wrap{display:grid;gap:22px}
@@ -137,6 +138,11 @@ nav.top .wrap{display:flex;align-items:center;gap:28px}
 .piece:hover .go{border-color:var(--water);color:var(--water)}
 @media (max-width:700px){.piece .meta{grid-template-columns:auto minmax(0,1fr);gap:18px}.piece .go{grid-column:1/-1;justify-self:start}}
 
+.invite-band{background:var(--water-soft);padding:clamp(56px,9vw,110px) 24px}
+.invite-band .wrap{display:grid;gap:18px;justify-items:start;max-width:1180px}
+.invite-band h2{font-size:clamp(2.6rem,6.5vw,5.2rem);letter-spacing:-.02em;color:var(--ink)}
+.invite-band p{color:var(--muted);max-width:52ch;font-size:1.05rem}
+.invite-band .begin{margin-top:8px}
 /* statement + pilot */
 .statement{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:48px;border-top:1px solid var(--line);padding-top:40px}
 .statement p.lead{font-family:var(--f-display);font-size:clamp(1.6rem,3.2vw,2.4rem);line-height:1.3}
@@ -349,7 +355,7 @@ footer{border-top:1px solid var(--line);padding-block:28px 40px;font-size:.8rem;
 
 .cr-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:28px;align-items:end}
 .portrait{margin:0;display:grid;gap:8px}
-.portrait img{width:100%;display:block;aspect-ratio:3/4;object-fit:cover;max-width:100%;filter:grayscale(1)}
+.portrait img{width:100%;display:block;aspect-ratio:3/4;object-fit:cover;object-position:50% 20%;max-width:100%;filter:grayscale(1)}
 .cr-name{display:grid;gap:10px;align-content:end;padding-bottom:28px}
 .cr-name h3{font-size:clamp(3rem,6vw,4.8rem);line-height:.92;letter-spacing:-.02em}
 .cr-name .jp{font-size:1.05rem;color:var(--muted)}
@@ -393,7 +399,7 @@ footer{border-top:1px solid var(--line);padding-block:28px 40px;font-size:.8rem;
       <h1 class="hero-lockup"><span class="lk-name">Pieces<br>of <em>Nature</em></span><span class="lk-sub">on Campus</span></h1>
       <div class="row">
         <p class="welcome">Stay a while.<br>Take a quiet moment for yourself.</p>
-        <div class="hero-act"><p class="lede">Step away from the day for five minutes. Sit with stone, water and living plants, and let them slow you down.</p><button class="begin" type="button" data-begin><i></i>Begin five minutes</button></div>
+        <div class="hero-act"><p class="lede">Step away from the day for five minutes. Sit with stone, water and living plants, and let them slow you down.</p></div>
       </div>
     </div></div>
   </header>
@@ -425,6 +431,15 @@ footer{border-top:1px solid var(--line);padding-block:28px 40px;font-size:.8rem;
         <span class="go">Enter the work</span>
       </div>
     </a>
+  </section>
+
+  <section class="invite-band bleed">
+    <div class="wrap">
+      <p class="label">When you are ready</p>
+      <h2>Take five minutes<br>with the tanks.</h2>
+      <p>A guided pause: sit, watch, breathe. The screen keeps time and the music plays softly. Then tell us how you feel.</p>
+      <button class="begin" type="button" data-begin><i></i>Begin five minutes</button>
+    </div>
   </section>
 
   <section class="statement">
@@ -528,7 +543,7 @@ footer{border-top:1px solid var(--line);padding-block:28px 40px;font-size:.8rem;
   <section class="creators">
     <div class="creator">
       <div class="cr-head">
-        <figure class="portrait"><img src="photos/homma-portrait.jpg" alt="Yusuke Homma"><figcaption class="cap">ADA Suikei Creator #01 · Photo © Aqua Design Amano</figcaption></figure>
+        <figure class="portrait"><img src="photos/homma-portrait.jpg" alt="Yusuke Homma"><figcaption class="cap">Yusuke Homma · Photo © Aqua Design Amano</figcaption></figure>
         <div class="cr-name"><p class="label">ADA Suikei Creator #01</p><h3>Yusuke<br>Homma</h3><p class="jp">本間 裕介</p><p class="role">Leads the ADA Suikei Creator team · Niigata, Japan</p></div>
       </div>
       <blockquote>“Unless you learn the principles first, you can never express your originality.”<cite>Aqua Journal, <a href="https://www.adana.co.jp/en/aquajournal/iwagumiko_01/" target="_blank" rel="noopener">“Iwagumi Ko” (2021)</a></cite></blockquote>
@@ -543,7 +558,7 @@ footer{border-top:1px solid var(--line);padding-block:28px 40px;font-size:.8rem;
     </div>
     <div class="creator">
       <div class="cr-head">
-        <figure class="portrait"><img src="photos/araki-portrait.jpg" alt="Daichi Araki"><figcaption class="cap">ADA Suikei Creator #02 · Photo © Aqua Design Amano</figcaption></figure>
+        <figure class="portrait"><img src="photos/araki-portrait.jpg" alt="Daichi Araki"><figcaption class="cap">Daichi Araki · Photo © Aqua Design Amano</figcaption></figure>
         <div class="cr-name"><p class="label">ADA Suikei Creator #02</p><h3>Daichi<br>Araki</h3><p class="jp">荒木 大地</p><p class="role">ADA Suikei Creator · Niigata, Japan</p></div>
       </div>
       <blockquote>“Nature Aquarium is not just a way of copying nature, but a form of art.”<cite>Aqua Journal, <a href="https://www.adana.co.jp/en/aquajournal/adasuikeicreator_02/" target="_blank" rel="noopener">ADA Suikei Creator #02 (2020)</a></cite></blockquote>
