@@ -172,6 +172,33 @@ nav.top .wrap{display:flex;align-items:center;gap:28px}
 .room .t{font-family:var(--f-display);font-size:clamp(1.8rem,2.6vw,2.3rem);line-height:1.05;text-wrap:balance}
 .room p{font-size:.92rem;color:var(--muted)}
 
+/* learn more */
+.learn-sec{display:grid;gap:28px;padding-top:clamp(56px,8vw,96px)}
+.ls-head{display:grid;gap:10px}
+.ls-head h3{font-size:clamp(2rem,4vw,3rem)}
+.lk-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:0 32px}
+.lk{display:grid;gap:10px;padding:26px 0 32px;border-top:1px solid var(--line);text-decoration:none;color:inherit;align-content:start;transition:border-color .3s}
+.lk:hover{border-top-color:var(--water)}
+.lk .t{font-family:var(--f-display);font-size:clamp(1.6rem,2.4vw,2rem);line-height:1.08}
+.lk p{font-size:.94rem;color:var(--muted)}
+.lk .go,.vid .go{font-family:var(--f-mono);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--water)}
+.vids{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:48px 32px}
+.vid{display:grid;gap:10px;text-decoration:none;color:inherit;align-content:start}
+.vid .th{position:relative;display:block;aspect-ratio:16/9;overflow:hidden;background:var(--leaf-deep);margin-bottom:6px}
+.vid .th img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.vid:hover .th img{transform:scale(1.04)}
+.vid .pl{position:absolute;left:16px;bottom:16px;width:46px;height:46px;border-radius:50%;background:rgba(247,245,239,.92);display:grid;place-items:center;color:var(--ink)}
+.vid .pl svg{width:11px;height:11px;fill:currentColor;margin-left:2px}
+.vid .src{color:var(--water)}
+.vid .t{font-family:var(--f-display);font-size:clamp(1.4rem,2.2vw,1.75rem);line-height:1.12}
+.vid p{font-size:.94rem;color:var(--muted)}
+.also{display:grid;gap:10px;border-top:1px solid var(--line);padding-top:18px}
+.also a{display:grid;grid-template-columns:96px minmax(0,1fr);gap:14px;align-items:center;text-decoration:none;color:inherit}
+.also img{width:96px;aspect-ratio:16/9;object-fit:cover;background:var(--leaf-deep)}
+.also b{font-family:var(--f-display);font-weight:400;font-size:1.12rem;line-height:1.15;display:block}
+.also small{font-family:var(--f-mono);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.also a:hover b{color:var(--water)}
+
 /* page headers (inner pages) */
 .page-head{padding-top:clamp(140px,20vh,200px);display:grid;gap:24px;max-width:960px}
 .page-head h2{font-size:clamp(3rem,8vw,6.5rem);letter-spacing:-.02em}
@@ -377,6 +404,7 @@ footer{border-top:1px solid var(--line);padding-block:28px 40px;font-size:.8rem;
     <a href="#creators">Creators</a>
     <a href="#research">Research</a>
     <a href="#visit">Visit</a>
+    <a href="#learn">Learn</a>
   </div>
   <div class="snd-wrap"><button class="snd" type="button" id="snd" aria-pressed="false" aria-expanded="false" aria-label="Sound"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z"/><path class="w" d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/></svg><span id="snd-label">Music</span></button>
   <div class="snd-menu" id="snd-menu" hidden role="menu">
@@ -498,6 +526,11 @@ footer{border-top:1px solid var(--line);padding-block:28px 40px;font-size:.8rem;
         </dl>
         <a class="watch" href="https://www.youtube.com/watch?v=UB6spLrls40&amp;t=348s" target="_blank" rel="noopener"><i><svg viewBox="0 0 10 10"><path d="M2 1l7 4-7 4z"/></svg></i>Watch the interview</a>
         <p class="soon">Making-of film <span>Coming soon</span></p>
+        <div class="also"><p class="label">More from Homma-san</p>
+          <a href="https://www.youtube.com/watch?v=6Go_TJCeuxg" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/6Go_TJCeuxg/hqdefault.jpg" alt="" loading="lazy"><span><b>Building the perfect Nature Aquarium in Japan</b><small>Masterclass · Green Aqua ↗</small></span></a>
+          <a href="https://www.youtube.com/watch?v=xcSBcFkqa24&amp;t=752s" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/xcSBcFkqa24/hqdefault.jpg" alt="" loading="lazy"><span><b>This aquarium will make you fall in love with aquascaping (again)</b><small>Feature · Green Aqua ↗</small></span></a>
+          <a href="#learn"><img src="photos/homma-tight.jpg" alt="" loading="lazy"><span><b>More videos and the story of ADA</b><small>Learn more</small></span></a>
+        </div>
       </div>
       <div class="prose read">
         <p>Built live during Homma-san's Aquascaping Masterclass at the ADA booth, using stones he brought from Japan. An Iwagumi is a stone arrangement: a few rocks placed so they read as one mountain range, with water flowing around them. Every stone was chosen and turned until it faced the right way, including the ones you cannot see. He signed the glass when it was finished.</p>
@@ -541,7 +574,7 @@ footer{border-top:1px solid var(--line);padding-block:28px 40px;font-size:.8rem;
   </header>
   <section class="founder">
     <div style="display:grid;gap:10px;align-content:start"><p class="label">The founder · 1954–2015</p><h3>Takashi Amano</h3><p class="jp" style="color:var(--muted)">天野 尚</p></div>
-    <p class="read" style="font-size:1.08rem">Photographer and founder of Aqua Design Amano in Niigata, Japan. He created the Nature Aquarium style: an aquarium that recreates a natural landscape as a living ecosystem of plants, stone, wood, fish and light. His last major work, <i>Forests Underwater</i> at the Oceanário de Lisboa (2015), is about 40 meters long.</p>
+    <p class="read" style="font-size:1.08rem">Photographer and founder of Aqua Design Amano in Niigata, Japan. He created the Nature Aquarium style: an aquarium that recreates a natural landscape as a living ecosystem of plants, stone, wood, fish and light. His last major work, <i>Forests Underwater</i> at the Oceanário de Lisboa, was 40 meters long and ran from 2015 to 2026. <a href="#learn" style="color:var(--water)">Learn more about Amano and ADA</a></p>
   </section>
   <section class="creators">
     <div class="creator">
@@ -572,6 +605,33 @@ footer{border-top:1px solid var(--line);padding-block:28px 40px;font-size:.8rem;
         <li>Created <i>Echinodorus Paradise</i> for the Nature Aquarium Exhibition 2021 in Tokyo.</li>
       </ul>
       <p class="more"><a href="https://www.adana.co.jp/en/aquajournal/adasuikeicreator_02/" target="_blank" rel="noopener">Read his profile on ADA Aqua Journal ↗</a> · <a href="#works-araki">His work here</a></p>
+    </div>
+  </section>
+</main>
+
+<!-- LEARN -->
+<main class="page" id="p-learn" data-page="learn" hidden>
+  <header class="page-head">
+    <p class="label">Learn more</p>
+    <h2>Where this <em>comes from</em></h2>
+    <p class="lede">Nature Aquarium began with one photographer in Niigata, Japan. Here are a few places to go deeper: his company, his largest work, and the people carrying it on.</p>
+  </header>
+  <section class="learn-sec">
+    <div class="ls-head"><p class="label">Takashi Amano &amp; ADA</p><h3>The source</h3></div>
+    <div class="lk-grid">
+      <a class="lk" href="https://www.adana.co.jp/en/contents/adainfo/index.html" target="_blank" rel="noopener"><span class="label">Niigata, Japan · since 1992</span><span class="t">Aqua Design Amano</span><p>The company Amano founded under one idea, “Learn from Nature.” Its tanks, lights and tools are used in both works here, and both creators work there today.</p><span class="go">About ADA ↗</span></a>
+      <a class="lk" href="https://www.adana.co.jp/en/contents/lisbon/index.html" target="_blank" rel="noopener"><span class="label">Lisbon · 2015 to 2026</span><span class="t">Forests Underwater</span><p>Amano’s largest and last work: a 40-meter Nature Aquarium at the Oceanário de Lisboa, seen by more than 10 million people. Araki-san cared for it for over four years.</p><span class="go">The Lisbon story ↗</span></a>
+      <a class="lk" href="https://www.adana.co.jp/en/aquajournal/" target="_blank" rel="noopener"><span class="label">In English</span><span class="t">Aqua Journal</span><p>ADA’s own essays, layout reports and creator profiles, including the Breezy Stonescape at AOAO Sapporo shown on our poster.</p><span class="go">Read Aqua Journal ↗</span></a>
+      <a class="lk" href="https://iaplc.com/" target="_blank" rel="noopener"><span class="label">Every year</span><span class="t">IAPLC</span><p>The International Aquatic Plants Layout Contest, the largest aquascaping contest in the world. Homma-san serves as a judge.</p><span class="go">See the winners ↗</span></a>
+    </div>
+  </section>
+  <section class="learn-sec">
+    <div class="ls-head"><p class="label">Watch</p><h3>See the masters at work</h3></div>
+    <div class="vids">
+      <a class="vid" href="https://www.youtube.com/watch?v=T3ySDMfWEZs" target="_blank" rel="noopener"><span class="th"><img src="https://i.ytimg.com/vi/T3ySDMfWEZs/hqdefault.jpg" alt="" loading="lazy"><i class="pl"><svg viewBox="0 0 10 10"><path d="M2 1l7 4-7 4z"/></svg></i></span><span class="src label">Green Aqua · Story</span><span class="t">How Yusuke Homma became Takashi Amano’s successor</span><p>From the ADA shop counter in Niigata to leading Amano’s team. The best first watch if you want to know who made the Iwagumi here.</p></a>
+      <a class="vid" href="https://www.youtube.com/watch?v=2CKihCJmGfY&t=507s" target="_blank" rel="noopener"><span class="th"><img src="https://i.ytimg.com/vi/2CKihCJmGfY/hqdefault.jpg" alt="" loading="lazy"><i class="pl"><svg viewBox="0 0 10 10"><path d="M2 1l7 4-7 4z"/></svg></i></span><span class="src label">Green Aqua · Full seminar</span><span class="t">The art and philosophy of Nature Aquariums</span><p>Homma-san explains the thinking behind Nature Aquarium: learning from nature, balance, and leaving empty space. Opens where the talk begins.</p></a>
+      <a class="vid" href="https://www.youtube.com/watch?v=6Go_TJCeuxg" target="_blank" rel="noopener"><span class="th"><img src="https://i.ytimg.com/vi/6Go_TJCeuxg/hqdefault.jpg" alt="" loading="lazy"><i class="pl"><svg viewBox="0 0 10 10"><path d="M2 1l7 4-7 4z"/></svg></i></span><span class="src label">Green Aqua · Masterclass</span><span class="t">Building the perfect Nature Aquarium in Japan</span><p>Watch Homma-san build a full layout in Japan, step by step, from the first stone to the last plant.</p></a>
+      <a class="vid" href="https://www.youtube.com/watch?v=xcSBcFkqa24&t=752s" target="_blank" rel="noopener"><span class="th"><img src="https://i.ytimg.com/vi/xcSBcFkqa24/hqdefault.jpg" alt="" loading="lazy"><i class="pl"><svg viewBox="0 0 10 10"><path d="M2 1l7 4-7 4z"/></svg></i></span><span class="src label">Green Aqua · Feature</span><span class="t">This aquarium will make you fall in love with aquascaping (again)</span><p>A close look at a Homma-san aquascape, starting at the moment the finished tank is revealed.</p></a>
     </div>
   </section>
 </main>
@@ -924,7 +984,7 @@ footer{border-top:1px solid var(--line);padding-block:28px 40px;font-size:.8rem;
 
 /* router: each room is a page; #works-homma style anchors open the parent page and scroll to the work */
 (function(){
-  const PAGES = ['home','works','creators','research','visit','review'];
+  const PAGES = ['home','works','creators','research','visit','learn','review'];
   const ALIAS = {why:'research', library:'research'};
   function route(){
     let h = (location.hash || '').replace('#','');
